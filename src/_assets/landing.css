@@ -1,9 +1,9 @@
 .cover {
+  background-color: var(--base-low);
   display: block;
-  position: relative;
-  object-fit: cover;
-  object-position: bottom center;
   height: 16rem;
+  object-fit: cover;
+  position: relative;
   width: 100%;
   z-index: 0;
 }
@@ -74,7 +74,7 @@
   justify-content: center;
   height: 3rem;
   width: 3rem;
-  
+
   color: var(--base-medium);
   border-radius: 50%;
 }
@@ -88,7 +88,7 @@
 }
 
 .social__icon:hover {
-background-color: var(--base-border);
+  background-color: var(--base-border);
 }
 
 .social__icon:focus {
