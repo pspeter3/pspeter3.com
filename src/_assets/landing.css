@@ -1,0 +1,96 @@
+.cover {
+  display: block;
+  position: relative;
+  object-fit: cover;
+  object-position: bottom center;
+  height: 16rem;
+  width: 100%;
+  z-index: 0;
+}
+
+.profile {
+  --spacing: 0.75rem;
+  --border-size: 0.0625rem;
+  display: flex;
+  padding: var(--spacing) 0 calc(var(--spacing) - var(--border-size));
+  border-bottom: var(--base-border) var(--border-size) solid;
+}
+
+.profile__avatar {
+  --avatar-size: 8rem;
+  border-radius: 50%;
+  height: var(--avatar-size);
+  width: var(--avatar-size);
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  margin-top: calc((var(--avatar-size) / -2) - var(--spacing));
+  border: 0.25rem solid var(--background);
+}
+
+.profile__details {
+  padding: 0rem 0.5rem;
+  height: 3rem;
+  flex: 1;
+}
+
+.profile__name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--base-high);
+}
+
+.profile__username {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--base-medium);
+}
+
+.bio {
+  margin: 0.5rem 0 1rem;
+}
+
+.bio a {
+  color: var(--primary-medium);
+  text-decoration: none;
+}
+
+.bio a:focus {
+  outline-color: var(--primary-low);
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  
+  color: var(--base-medium);
+  border-radius: 50%;
+}
+
+.social__icon .feather {
+  display: block;
+}
+
+.social__icon + .social__icon {
+  margin-left: 0.5rem;
+}
+
+.social__icon:hover {
+background-color: var(--base-border);
+}
+
+.social__icon:focus {
+  outline-color: var(--base-low);
+}
