@@ -1,0 +1,14 @@
+{
+  "name": "pspeter3.com",
+  "description": "Personal website",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pspeter3/pspeter3.com.git"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
