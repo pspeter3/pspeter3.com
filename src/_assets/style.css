@@ -1,4 +1,50 @@
+:root {
+  --background: #ffffff;
+  --base-border: #dcdee0;
+  --base-low: #8d9297;
+  --base-medium: #71767a;
+  --base-high: #3d4551;
+  --primary-low: #59b9de;
+  --primary-medium: #0d7ea2;
+  --primary-high: #074b69;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1c1d1f;
+    --base-border: #2d2e2f;
+    --base-low: #71767a;
+    --base-medium: #8d9297;
+    --base-high: #c6cace;
+    --primary-low: #07648d;
+    --primary-medium: #28a0cb;
+    --primary-high: #97d4ea;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
+  color: var(--base-high);
+  background-color: var(--background);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  margin: 0;
 }
+
+.content {
+  margin: 0 auto;
+  max-width: 32rem;
+  padding: 0 1rem 3rem;
+}
+
+@import "./landing.css";
