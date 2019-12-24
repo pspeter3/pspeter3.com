@@ -14,6 +14,7 @@
     "url": "git+https://github.com/pspeter3/pspeter3.com.git"
   },
   "dependencies": {
+    "rss": "^1.2.2",
     "sitemap": "^5.1.0"
   },
   "devDependencies": {
