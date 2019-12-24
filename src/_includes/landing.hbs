@@ -1,42 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  {{> partials/head }}
-  <body>
-    <img src="/img/cover.jpg" alt="New Zealand Beach" class="cover" />
-    <main class="content">
-      <header class="profile">
-        <img src="/img/profile.jpg" alt="Phips Peter" class="profile__avatar" />
-        <div class="profile__details">
-          <h1 class="profile__name">Phips Peter</h1>
-          <h2 class="profile__username">@pspeter3</h2>
-        </div>
-      </header>
-      <section class="bio">
-        {{{ content }}}
-      </section>
-      <footer class="social">
-        <a
-          href="https://github.com/pspeter3"
-          class="social__icon"
-          aria-label="Github"
-        >
-          {{> icons/github }}
-        </a>
-        <a
-          href="https://twitter.com/pspeter"
-          class="social__icon"
-          aria-label="Twitter"
-        >
-          {{> icons/twitter }}
-        </a>
-        <a
-          href="https://linkedin.com/in/pspeter3"
-          class="social__icon"
-          aria-label="LinkedIn"
-        >
-          {{> icons/linkedin }}
-        </a>
-      </footer>
-    </main>
-  </body>
-</html>
+---
+layout: default
+---
+
+<img src="/img/cover.jpg" alt="New Zealand Beach" class="cover" />
+<main class="content">
+  <header class="profile">
+    <img
+      src="/img/profile.jpg"
+      alt="{{ author/name }}"
+      class="profile__avatar"
+    />
+    <div class="profile__details">
+      <h1 class="profile__name">{{ author/name }}</h1>
+      <h2 class="profile__username">{{ author/twitter }}</h2>
+    </div>
+  </header>
+  <section class="bio">
+    {{{ content }}}
+  </section>
+  <section class="recent">
+    <h1 class="recent__title">Recent Posts</h1>
+    {{#each (limit (reverse collections/posts) 3) }} {{> partials/post data }}
+    {{/each}}
+  </section>
+  <footer>
+    {{> partials/social }}
+  </footer>
+</main>

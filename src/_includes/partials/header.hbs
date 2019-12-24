@@ -1,0 +1,24 @@
+<header class="content__header">
+  <div class="content__metadata">
+    <a
+      href="/"
+      class="author"
+      itemprop="author"
+      itemscope
+      itemtype="http://schema.org/Person"
+    >
+      <img
+        src="/img/profile.jpg"
+        alt="Phips Peter"
+        class="author__avatar"
+        itemprop="image"
+      />
+      <div class="author__details">
+        <h1 class="author__name" itemprop="name">{{ author/name }}</h1>
+        <h2 class="author__username">{{ author/twitter }}</h2>
+      </div>
+    </a>
+    {{> partials/social }}
+  </div>
+  <h1 class="content__title" itemprop="headline">{{ title }}</h1>
+</header>

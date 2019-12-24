@@ -1,5 +1,13 @@
 const path = require("path");
 
+const pad = (value, length) => {
+  let result = value.toString();
+  while (result.length < length) {
+    result = `0${result}`;
+  }
+  return result;
+};
+
 const configure = config => {
   config.setUseGitIgnore(false);
   config.addPassthroughCopy(path.join("src", "img"));
@@ -24,6 +32,35 @@ const configure = config => {
       })
       .join("");
   });
+  config.addShortcode("reverse", array => Array.from(array).reverse());
+  config.addShortcode("limit", (array, limit) => array.slice(0, limit));
+  config.addShortcode(
+    "iso",
+    date =>
+      `${date.getFullYear()}-${pad(date.getMonth() + 1, 2)}-${pad(
+        date.getDate(),
+        2,
+      )}`,
+  );
+  config.addShortcode("group", collection => {
+    const keys = [];
+    const data = collection.reduce((map, item) => {
+      const year = item.date.getFullYear();
+      if (map[year] === undefined) {
+        map[year] = [];
+        keys.push(year);
+      }
+      map[year].push(item);
+      return map;
+    }, {});
+    return keys.map(title => {
+      const collection = data[title];
+      return { title, collection };
+    });
+  });
+  config.addCollection("posts", collection =>
+    collection.getFilteredByGlob("*/blog/**/*.md"),
+  );
   return {
     dir: {
       input: "src",

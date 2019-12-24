@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  {{> partials/head }}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{ title }}</title>
+    {{{ assets manifest }}}
+    <meta name="theme-color" content="#1c1d1f" />
+    <meta name="description" content="{{ description }}" />
+    <link rel="author" href="https://pspeter3.com" />
+    <meta itemprop="name" content="{{ title }}" />
+    <meta itemprop="description" content="{{ description }}" />
+    <meta name="twitter:dnt" content="on" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="{{ author/twitter }}" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ description }}" />
+  </head>
+
   <body>
     {{{ content }}}
   </body>

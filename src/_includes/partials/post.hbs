@@ -1,0 +1,21 @@
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <a href="{{ page/url }}" class="post__container" itemprop="url">
+    <div class="post__icon">
+      {{> icons/file-text }}
+    </div>
+    <div class="post__data">
+      <h2 class="post__title" itemprop="headline">
+        {{ title }}
+      </h2>
+      <p class="post__date" itemprop="datePublished">{{ iso page/date }}</p>
+    </div>
+    <div
+      class="hidden"
+      itemprop="author"
+      itemscope
+      itemtype="http://schema.org/Person"
+    >
+      <meta itemprop="name" content="{{ author/name }}" />
+    </div>
+  </a>
+</article>
