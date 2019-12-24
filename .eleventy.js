@@ -1,4 +1,5 @@
 const path = require("path");
+const htmlMinifier = require("html-minifier");
 
 const pad = (value, length) => {
   let result = value.toString();
@@ -61,6 +62,16 @@ const configure = config => {
   config.addCollection("posts", collection =>
     collection.getFilteredByGlob("*/blog/**/*.md"),
   );
+  config.addTransform("html-minifier", (content, outputPath) => {
+    if (outputPath.endsWith("html")) {
+      return htmlMinifier.minify(content, {
+        collapseBooleanAttributes: true,
+        collapseWhitespace: true,
+        removeComments: true,
+      });
+    }
+    return content;
+  });
   return {
     dir: {
       input: "src",
