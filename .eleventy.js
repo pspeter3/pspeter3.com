@@ -1,5 +1,6 @@
 const path = require("path");
 const htmlMinifier = require("html-minifier");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const pad = (value, length) => {
   let result = value.toString();
@@ -72,6 +73,7 @@ const configure = config => {
     }
     return content;
   });
+  config.addPlugin(syntaxHighlight);
   return {
     dir: {
       input: "src",
