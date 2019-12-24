@@ -28,7 +28,7 @@ In order to make this work, you'll need a few things:
 
 The following xboxdrv file will set up your Xbox controller
 
-```sh
+```bash
 [xboxdrv]
 ui-clear=true
 trigger-as-button = true
