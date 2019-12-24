@@ -4,6 +4,7 @@
   --base-low: #8d9297;
   --base-medium: #71767a;
   --base-high: #3d4551;
+  --primary-border: #e1f3f8;
   --primary-low: #59b9de;
   --primary-medium: #0d7ea2;
   --primary-high: #074b69;
@@ -16,6 +17,7 @@
     --base-low: #71767a;
     --base-medium: #8d9297;
     --base-high: #c6cace;
+    --primary-border: #002d3f;
     --primary-low: #07648d;
     --primary-medium: #28a0cb;
     --primary-high: #97d4ea;
@@ -41,10 +43,12 @@ body {
   margin: 0;
 }
 
-.content {
-  margin: 0 auto;
-  max-width: 32rem;
-  padding: 0 1rem 3rem;
+.hidden {
+  display: none;
 }
 
 @import "./landing.css";
+@import "./content.css";
+@import "./article.css";
+@import "./social.css";
+@import "./post.css";

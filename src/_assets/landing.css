@@ -51,7 +51,11 @@
 }
 
 .bio {
-  margin: 0.5rem 0 1rem;
+  padding: 0.5rem 0 1rem;
+}
+
+.bio p {
+  margin: 0;
 }
 
 .bio a {
@@ -63,34 +67,12 @@
   outline-color: var(--primary-low);
 }
 
-.social {
-  display: flex;
-  justify-content: center;
-}
-
-.social__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 3rem;
-  width: 3rem;
-
+.recent__title {
   color: var(--base-medium);
-  border-radius: 50%;
-}
-
-.social__icon .feather {
-  display: block;
-}
-
-.social__icon + .social__icon {
-  margin-left: 0.5rem;
-}
-
-.social__icon:hover {
-  background-color: var(--base-border);
-}
-
-.social__icon:focus {
-  outline-color: var(--base-low);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 2;
+  margin: 0;
+  text-transform: uppercase;
 }
