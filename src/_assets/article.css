@@ -50,3 +50,14 @@
 .article a:focus {
   outline-color: var(--primary-low);
 }
+
+.article table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 0 1.5rem;
+}
+
+.article tr {
+  --border-size: 0.0625rem;
+  border-bottom: var(--base-border) var(--border-size) solid;
+}
