@@ -23,8 +23,6 @@
 
 .post__icon {
   align-items: center;
-  background-color: var(--border);
-  border-radius: 50%;
   color: var(--low);
   display: flex;
   flex-shrink: 0;
@@ -40,6 +38,7 @@
   font-weight: 600;
   line-height: 1.5;
   margin: 0;
+  margin-right: 1rem;
 }
 
 .post__date {
