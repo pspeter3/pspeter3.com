@@ -3,10 +3,12 @@
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "build": "run-s build:*",
+    "build": "run-s generate build:*",
     "build:next": "next build",
     "build:export": "next export",
     "fmt": "prettier --write 'src/**/*' '*.md'",
+    "generate": "run-p generate:*",
+    "generate:rss": "ts-node --project tsconfig.cli.json src/tools/rss.ts",
     "start": "next",
     "test": "run-p test:*",
     "test:fmt": "prettier --check 'src/**/*' '*.md'",
@@ -33,6 +35,7 @@
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "@types/react-syntax-highlighter": "^11.0.5",
+    "@types/rss": "0.0.28",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "eslint": "^7.8.0",
@@ -48,6 +51,7 @@
     "prettier": "^2.1.1",
     "rss": "^1.2.2",
     "sitemap": "^6.2.0",
+    "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
   },
   "babel": {
