@@ -3,6 +3,7 @@ import { Calendar } from "react-feather";
 import ReactMarkdown from "react-markdown";
 import { CodeBlock } from "../../components/CodeBlock";
 import { Header } from "../../components/Header";
+import { Meta } from '../../components/Meta';
 import { BlogPost, loadBlogPosts } from "../../tools/blog";
 import { parseDate, toISODate, toSlug } from "../../tools/utils";
 
@@ -32,6 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const ArticlePage: NextPage<Props> = (post) => (
   <main className="content" itemScope itemType="http://schema.org/BlogPosting">
+    <Meta title={post.title} description=""/>
     <Header title={post.title}></Header>
     <section className="article__date" itemProp="datePublished">
       <Calendar className="feather" />
