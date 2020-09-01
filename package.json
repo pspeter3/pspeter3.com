@@ -6,8 +6,9 @@
     "build": "run-s build:*",
     "build:next": "next build",
     "build:export": "next export",
-    "fmt": "prettier --write 'src/**/*'",
+    "fmt": "prettier --write 'src/**/*' '*.md'",
     "start": "next",
+    "test:fmt": "prettier --check 'src/**/*' '*.md'",
     "test:spec": "jest --ci"
   },
   "repository": {
