@@ -1,7 +1,7 @@
 ---
 title: "How to Break an Xbox 360"
 tags:
-  - xbox360
+    - xbox360
 ---
 
 I lived in NorCal this summer while I had an internship in Silicon Valley. Since
@@ -60,4 +60,4 @@ insurance on a package because it doesn't help anyway.
 
 ## Notes
 
-- I know I should have kept the box, that was definitely a mistake
+-   I know I should have kept the box, that was definitely a mistake

@@ -10,19 +10,19 @@ the browser bar with `javascript:` at the beginning.
 
 ```js
 (function () {
-  var messenger, nodes, width, columns;
-  messenger = document.getElementById("pagelet_web_messenger");
-  document.body.appendChild(messenger.parentNode.removeChild(messenger));
-  nodes = document.getElementsByClassName("_li");
-  for (var i = nodes.length - 1; i >= 0; i--) {
-    nodes[i].remove();
-  }
-  width = messenger.clientWidth;
-  columns = document.getElementsByClassName("uiScrollableAreaBody");
-  for (var i = columns.length - 1; i >= 0; i--) {
-    width -= columns[i].clientWidth;
-  }
-  width = parseInt(width / 2) + "px";
-  messenger.style.paddingLeft = width;
+    var messenger, nodes, width, columns;
+    messenger = document.getElementById("pagelet_web_messenger");
+    document.body.appendChild(messenger.parentNode.removeChild(messenger));
+    nodes = document.getElementsByClassName("_li");
+    for (var i = nodes.length - 1; i >= 0; i--) {
+        nodes[i].remove();
+    }
+    width = messenger.clientWidth;
+    columns = document.getElementsByClassName("uiScrollableAreaBody");
+    for (var i = columns.length - 1; i >= 0; i--) {
+        width -= columns[i].clientWidth;
+    }
+    width = parseInt(width / 2) + "px";
+    messenger.style.paddingLeft = width;
 })();
 ```

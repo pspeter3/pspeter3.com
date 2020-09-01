@@ -1,10 +1,10 @@
 ---
 title: "Hello Wunderkit"
 tags:
-  - tasks
-  - gtd
-  - productivity
-  - wunderkit
+    - tasks
+    - gtd
+    - productivity
+    - wunderkit
 ---
 
 Last week I wrote a [comparison of various task managers](http://pspeter3.github.com/blog/2012/02/01/comparisons-of-task-managers/),

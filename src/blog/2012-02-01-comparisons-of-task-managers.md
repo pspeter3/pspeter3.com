@@ -1,9 +1,9 @@
 ---
 title: "Comparisons of Task Managers"
 tags:
-  - tasks
-  - gtd
-  - productivity
+    - tasks
+    - gtd
+    - productivity
 ---
 
 Every few months, I end up deciding if what current task manager I am using is
