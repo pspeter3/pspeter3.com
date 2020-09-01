@@ -2,12 +2,29 @@ import { ComponentType, FC, useEffect } from "react";
 import Router from "next/router";
 import "../styles/style.css";
 import { google } from "../config/analytics.json";
+import { NextWebVitalsMetric } from "next/dist/next-server/lib/utils";
 
 declare var gtag: UniversalAnalytics.ga;
 
 export interface Props<T = {}> {
   Component: ComponentType<T>;
   pageProps: T;
+}
+
+export function reportWebVitals({
+  id,
+  name,
+  label,
+  value,
+}: NextWebVitalsMetric) {
+  gtag("send", "event", {
+    eventCategory:
+      label === "web-vital" ? "Web Vitals" : "Next.js custom metric",
+    eventAction: name,
+    eventValue: Math.round(name === "CLS" ? value * 1000 : value), // values must be integers
+    eventLabel: id, // id unique to current page load
+    nonInteraction: true, // avoids affecting bounce rate.
+  });
 }
 
 const App: FC<Props> = ({ Component, pageProps }) => {
