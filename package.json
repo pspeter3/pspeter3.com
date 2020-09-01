@@ -3,35 +3,103 @@
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production && eleventy",
-    "fmt": "prettier --write 'src/**/*' '*.js'",
-    "start": "run-p watch:*",
-    "watch:site": "eleventy --serve --watch",
-    "watch:assets": "webpack --mode development --watch"
+    "build": "run-s generate build:*",
+    "build:next": "next build",
+    "build:export": "next export",
+    "fmt": "prettier --write 'src/**/*' '*.md'",
+    "generate": "run-p generate:*",
+    "generate:rss": "ts-node --project tsconfig.cli.json src/tools/rss.ts",
+    "generate:sitemap": "ts-node --project tsconfig.cli.json src/tools/sitemap.ts",
+    "start": "next",
+    "test": "run-p test:*",
+    "test:fmt": "prettier --check 'src/**/*' '*.md'",
+    "test:lint": "eslint 'src/**/*.{ts,tsx}'",
+    "test:spec": "jest --ci",
+    "test:types": "tsc --pretty"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pspeter3/pspeter3.com.git"
   },
   "dependencies": {
-    "rss": "^1.2.2",
-    "sitemap": "^5.1.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
+    "react-markdown": "^4.3.1",
+    "react-syntax-highlighter": "^13.5.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.4.2",
-    "html-minifier": "^4.0.0",
-    "mini-css-extract-plugin": "^0.9.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^10.4.9",
+    "@types/google.analytics": "0.0.40",
+    "@types/jest": "^26.0.12",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-syntax-highlighter": "^11.0.5",
+    "@types/rss": "0.0.28",
+    "@typescript-eslint/eslint-plugin": "^4.0.1",
+    "@typescript-eslint/parser": "^4.0.1",
+    "eslint": "^7.8.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "fast-glob": "^3.2.4",
+    "gray-matter": "^4.0.2",
+    "jest": "^26.4.2",
+    "next": "^9.5.2",
     "npm-run-all": "^4.1.5",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "prettier": "^1.19.1",
-    "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11",
-    "webpack-manifest-plugin": "^2.2.0"
+    "prettier": "^2.1.1",
+    "rss": "^1.2.2",
+    "sitemap": "^6.2.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "jest/globals": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:jest/recommended",
+      "plugin:jsx-a11y/recommended",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint",
+      "jest",
+      "jsx-a11y",
+      "react-hooks"
+    ],
+    "rules": {
+      "jsx-a11y/anchor-is-valid": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "jest": {
+    "collectCoverage": true,
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/tools/jest.setup.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/.next/"
+    ]
   },
   "prettier": {
     "trailingComma": "all",

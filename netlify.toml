@@ -1,5 +1,5 @@
 [build]
-    publish = "dist"
+    publish = "out"
 [build.processing.css]
     bundle = false
     minify = false

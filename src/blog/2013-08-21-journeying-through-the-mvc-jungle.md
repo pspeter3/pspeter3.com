@@ -16,10 +16,10 @@ Actually using Backbone for a single page application became harder. How to mana
  * @param {Object} clazz The Backbone Class
  * @return {Object} The extended backbone class
  */
-var withTraits = function(clazz) {
+var withTraits = function (clazz) {
   var args = [].slice.call(arguments).slice(1);
   var traits = {};
-  _.each(args, function(trait) {
+  _.each(args, function (trait) {
     _.extend(traits, trait);
   });
   return clazz.extend(traits);

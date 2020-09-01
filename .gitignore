@@ -1,4 +1,13 @@
-dist/
-node_modules/
-src/_data/manifest.json
-src/static/
+# Code Coverage
+coverage
+
+# Dependencies
+node_modules
+
+# Next
+.next
+out
+
+# Generation
+public/feed.xml
+public/sitemap.xml
