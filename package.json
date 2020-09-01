@@ -3,10 +3,9 @@
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production && eleventy",
+    "build": "webpack --mode production",
     "fmt": "prettier --write 'src/**/*' '*.js'",
-    "start": "run-p watch:*",
-    "watch:site": "eleventy --serve --watch",
+    "start": "npm run watch:assets",
     "watch:assets": "webpack --mode development --watch"
   },
   "repository": {
@@ -18,8 +17,6 @@
     "sitemap": "^5.1.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "babel-loader": "^8.0.6",
