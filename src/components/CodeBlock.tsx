@@ -1,4 +1,3 @@
-import { language } from "gray-matter";
 import React, { FC } from "react";
 import { Prism } from "react-syntax-highlighter";
 import nord from "react-syntax-highlighter/dist/cjs/styles/prism/nord";
