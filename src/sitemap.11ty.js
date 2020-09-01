@@ -11,7 +11,7 @@ class Sitemap {
     const stream = new SitemapStream({
       hostname: "https://pspeter3.com",
     });
-    ctx.collections.all.forEach(item => {
+    ctx.collections.all.forEach((item) => {
       stream.write({
         url: item.url,
         lastmod: item.date,

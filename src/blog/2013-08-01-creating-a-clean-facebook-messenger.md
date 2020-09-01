@@ -9,7 +9,7 @@ Messages inbox without the rest of Facebook, run the script below in your JavaSc
 the browser bar with `javascript:` at the beginning.
 
 ```js
-(function() {
+(function () {
   var messenger, nodes, width, columns;
   messenger = document.getElementById("pagelet_web_messenger");
   document.body.appendChild(messenger.parentNode.removeChild(messenger));

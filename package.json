@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "rss": "^1.2.2",
-    "sitemap": "^5.1.0"
+    "sitemap": "^6.2.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.1.1"
   },
   "prettier": {
     "trailingComma": "all",

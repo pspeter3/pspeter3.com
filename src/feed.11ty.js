@@ -14,7 +14,7 @@ class Feed {
       site_url: "https://pspeter3.com",
       feed_url: "https://pspeter3.com/feed.xml",
     });
-    ctx.collections.posts.forEach(post => {
+    ctx.collections.posts.forEach((post) => {
       feed.item({
         title: post.data.title,
         description: post.data.description,
