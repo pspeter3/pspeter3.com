@@ -1,10 +1,23 @@
-import React from "react";
-import { NextPage } from "next";
+import { NextPage, GetStaticProps } from "next";
 import { Social } from "../components/Social";
 import { Meta } from "../components/Meta";
 import * as author from "../config/author.json";
+import { BlogPost, loadBlogPosts } from "../tools/blog";
+import { parseBasename, reverseChronological } from "../tools/utils";
+import { Post } from "../components/Post";
 
-const IndexPage: NextPage = () => (
+export interface Props {
+  readonly posts: ReadonlyArray<BlogPost>;
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const blog = await loadBlogPosts();
+  const posts = blog.sort(reverseChronological).slice(0, 3);
+  const props: Props = { posts };
+  return { props };
+};
+
+const IndexPage: NextPage<Props> = ({ posts }) => (
   <>
     <Meta title="pspeter3" description={author.name}></Meta>
     <img src="/img/cover.jpg" alt="New Zealand Beach" className="cover" />
@@ -34,6 +47,9 @@ const IndexPage: NextPage = () => (
       </section>
       <section className="recent">
         <h1 className="recent__title">Recent Posts</h1>
+        {posts.map((post) => (
+          <Post key={post.basename} {...post} />
+        ))}
       </section>
       <footer>
         <Social />
