@@ -3,18 +3,29 @@
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "fmt": "prettier --write 'src/**/*'"
+    "build": "npm run build:next && npm run build:export",
+    "build:next": "next build",
+    "build:export": "next export",
+    "fmt": "prettier --write 'src/**/*'",
+    "start": "next"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pspeter3/pspeter3.com.git"
   },
   "dependencies": {
-    "rss": "^1.2.2",
-    "sitemap": "^6.2.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "prettier": "^2.1.1"
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "next": "^9.5.2",
+    "prettier": "^2.1.1",
+    "rss": "^1.2.2",
+    "sitemap": "^6.2.0",
+    "typescript": "^4.0.2"
   },
   "prettier": {
     "trailingComma": "all",

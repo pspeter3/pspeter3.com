@@ -1,2 +1,9 @@
-dist/
-node_modules/
+# Code Coverage
+coverage
+
+# Dependencies
+node_modules
+
+# Next
+.next
+out
