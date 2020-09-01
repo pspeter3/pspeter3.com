@@ -4,8 +4,9 @@ import "../styles/style.css";
 import { google } from "../config/analytics.json";
 import { NextWebVitalsMetric } from "next/dist/next-server/lib/utils";
 
-declare var gtag: UniversalAnalytics.ga;
+declare let gtag: UniversalAnalytics.ga;
 
+// eslint-disable-next-line  @typescript-eslint/ban-types
 export interface Props<T = {}> {
     Component: ComponentType<T>;
     pageProps: T;
@@ -16,7 +17,7 @@ export function reportWebVitals({
     name,
     label,
     value,
-}: NextWebVitalsMetric) {
+}: NextWebVitalsMetric): void {
     gtag("send", "event", {
         eventCategory:
             label === "web-vital" ? "Web Vitals" : "Next.js custom metric",

@@ -2,9 +2,9 @@ import Document, { Head, Main, NextScript } from "next/document";
 import { google } from "../config/analytics.json";
 
 export default class CustomDocument extends Document {
-    render() {
+    render(): JSX.Element {
         return (
-            <html>
+            <html lang="en">
                 <Head>
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script

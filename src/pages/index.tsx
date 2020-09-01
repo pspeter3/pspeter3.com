@@ -3,7 +3,7 @@ import { Social } from "../components/Social";
 import { Meta } from "../components/Meta";
 import * as author from "../config/author.json";
 import { BlogPost, loadBlogPosts } from "../tools/blog";
-import { parseBasename, reverseChronological } from "../tools/utils";
+import { reverseChronological } from "../tools/utils";
 import { Post } from "../components/Post";
 
 export interface Props {
