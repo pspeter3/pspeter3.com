@@ -12,17 +12,17 @@ const writeFile = util.promisify(fs.writeFile);
 const main = async (): Promise<void> => {
   const filename = "sitemap.xml";
   const sitemap = new SitemapStream({
-      hostname: author.site
-  })
+    hostname: author.site,
+  });
   const blog = await loadBlogPosts();
   blog.forEach((post) => {
-      sitemap.write({
-          url: `/blog/${toSlug(post.basename)}`,
-          lastmod: parseDate(post.basename)
-      });
+    sitemap.write({
+      url: `/blog/${toSlug(post.basename)}`,
+      lastmod: parseDate(post.basename),
+    });
   });
   const lastmod = new Date();
-  const write = (url: string) => sitemap.write({url, lastmod});
+  const write = (url: string) => sitemap.write({ url, lastmod });
   write("/");
   write("/blog");
   write("/feed.xml");
