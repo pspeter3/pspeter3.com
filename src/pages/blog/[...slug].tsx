@@ -1,6 +1,7 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { Calendar } from "react-feather";
 import ReactMarkdown from "react-markdown";
+import { CodeBlock } from '../../components/CodeBlock';
 import { Header } from "../../components/Header";
 import { BlogPost, loadBlogPosts } from "../../tools/blog";
 import { parseDate, toISODate, toSlug } from "../../tools/utils";
@@ -33,11 +34,11 @@ const ArticlePage: NextPage<Props> = (post) => (
   <main className="content" itemScope itemType="http://schema.org/BlogPosting">
     <Header title={post.title}></Header>
     <section className="article__date" itemProp="datePublished">
-      <Calendar className="feather"/>
+      <Calendar className="feather" />
       {toISODate(parseDate(post.basename))}
     </section>
     <section className="article" itemProp="articleBody">
-      <ReactMarkdown source={post.content}></ReactMarkdown>
+      <ReactMarkdown source={post.content} renderers={{code: CodeBlock}}></ReactMarkdown>
     </section>
   </main>
 );
