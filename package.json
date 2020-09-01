@@ -9,6 +9,7 @@
     "fmt": "prettier --write 'src/**/*' '*.md'",
     "generate": "run-p generate:*",
     "generate:rss": "ts-node --project tsconfig.cli.json src/tools/rss.ts",
+    "generate:sitemap": "ts-node --project tsconfig.cli.json src/tools/sitemap.ts",
     "start": "next",
     "test": "run-p test:*",
     "test:fmt": "prettier --check 'src/**/*' '*.md'",

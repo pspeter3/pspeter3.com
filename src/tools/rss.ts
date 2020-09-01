@@ -22,7 +22,7 @@ const main = async (): Promise<void> => {
     feed.item({
       title: post.title,
       description: "",
-      url: `${author.site}/blog/${toSlug(post.basename)}`,
+      url: `/blog/${toSlug(post.basename)}`,
       date: parseDate(post.basename),
       author: author.name,
       categories: post.tags as string[],
