@@ -9,7 +9,8 @@
     "fmt": "prettier --write 'src/**/*' '*.md'",
     "start": "next",
     "test:fmt": "prettier --check 'src/**/*' '*.md'",
-    "test:spec": "jest --ci"
+    "test:spec": "jest --ci",
+    "test:types": "tsc --pretty"
   },
   "repository": {
     "type": "git",
