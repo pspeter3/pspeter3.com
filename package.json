@@ -8,6 +8,7 @@
     "build:export": "next export",
     "fmt": "prettier --write 'src/**/*' '*.md'",
     "start": "next",
+    "test": "run-p test:*",
     "test:fmt": "prettier --check 'src/**/*' '*.md'",
     "test:lint": "eslint 'src/**/*.{ts,tsx}'",
     "test:spec": "jest --ci",
