@@ -102,14 +102,7 @@
     ]
   },
   "prettier": {
-    "trailingComma": "all",
-    "overrides": [
-      {
-        "files": "*.hbs",
-        "options": {
-          "parser": "html"
-        }
-      }
-    ]
+    "tabWidth": 4,
+    "trailingComma": "all"
   }
 }

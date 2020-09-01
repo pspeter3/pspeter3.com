@@ -1,8 +1,8 @@
 ---
 title: "Piracy Is a Problem"
 tags:
-  - piracy
-  - SOPA
+    - piracy
+    - SOPA
 ---
 
 Recently I've seen a lot of debate about the role of piracy on the internet. I

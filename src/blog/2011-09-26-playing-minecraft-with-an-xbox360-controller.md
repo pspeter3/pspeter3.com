@@ -1,10 +1,10 @@
 ---
 title: "Playing Minecraft With an Xbox360 Controller"
 tags:
-  - xbox360
-  - minecraft
-  - ubuntu
-  - elementary
+    - xbox360
+    - minecraft
+    - ubuntu
+    - elementary
 ---
 
 So I got Minecraft for my birthday, which started this whole adventure.
@@ -18,11 +18,11 @@ derivative of Ubuntu.
 
 In order to make this work, you'll need a few things:
 
-- An official USB Xbox 360 controller. Now I'm not sure if you absolutely need
-  an official Xbox 360 controller but I've had issues in the past with 3rd
-  party controllers so I would highly recommend it.
-- Xboxdrv, <http://pingus.seul.org/~grumbel/xboxdrv/xboxdrv.html>
-- An Xboxdrv configuration file, conveniently displayed below
+-   An official USB Xbox 360 controller. Now I'm not sure if you absolutely need
+    an official Xbox 360 controller but I've had issues in the past with 3rd
+    party controllers so I would highly recommend it.
+-   Xboxdrv, <http://pingus.seul.org/~grumbel/xboxdrv/xboxdrv.html>
+-   An Xboxdrv configuration file, conveniently displayed below
 
 ## Minecraft.xboxdrv
 
@@ -77,18 +77,18 @@ back = KEY_ESC
 
 ## The Controls
 
-- The left joystick is WASD
-- The right joystick is the view with normal configuration. You can created an
-  inverted look by shifting the controls.
-- A is jump
-- B and Right bumper are crouch
-- X is drop
-- Y is talk
-- Right Trigger is break
-- Left Trigger is place
-- Left Bumper shows who is on the server
-- Select shows the menu
-- Start shows inventory
+-   The left joystick is WASD
+-   The right joystick is the view with normal configuration. You can created an
+    inverted look by shifting the controls.
+-   A is jump
+-   B and Right bumper are crouch
+-   X is drop
+-   Y is talk
+-   Right Trigger is break
+-   Left Trigger is place
+-   Left Bumper shows who is on the server
+-   Select shows the menu
+-   Start shows inventory
 
 ## Starting the controller
 

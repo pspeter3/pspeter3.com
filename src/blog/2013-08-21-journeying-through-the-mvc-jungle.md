@@ -17,17 +17,17 @@ Actually using Backbone for a single page application became harder. How to mana
  * @return {Object} The extended backbone class
  */
 var withTraits = function (clazz) {
-  var args = [].slice.call(arguments).slice(1);
-  var traits = {};
-  _.each(args, function (trait) {
-    _.extend(traits, trait);
-  });
-  return clazz.extend(traits);
+    var args = [].slice.call(arguments).slice(1);
+    var traits = {};
+    _.each(args, function (trait) {
+        _.extend(traits, trait);
+    });
+    return clazz.extend(traits);
 };
 
 // Assume you have an object Commentable
 var Post = withTraits(Backbone.Model, Commentable, {
-  url: "/api/v1/posts",
+    url: "/api/v1/posts",
 });
 ```
 
