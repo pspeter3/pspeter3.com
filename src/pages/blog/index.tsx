@@ -1,7 +1,7 @@
 import { NextPage, GetStaticProps } from "next";
 import { Header } from "../../components/Header";
 import { Meta } from "../../components/Meta";
-import { Post } from "../../components/Post";
+import { PostList } from "../../components/PostList";
 import { BlogPost, loadBlogPosts } from "../../tools/blog";
 import { parseDate, reverseChronological } from "../../tools/utils";
 
@@ -25,28 +25,14 @@ const BlogPage: NextPage<Props> = (posts) => {
     const description = "Phips Peter's Blog";
     const years = Object.keys(posts).sort().reverse();
     return (
-        <main className="max-w-2xl mx-auto px-4 pb-6 space-y-6">
+        <main className="mx-auto pb-6 px-4 max-w-2xl space-y-6">
             <Meta title={title} description={description}></Meta>
             <Header />
-            <h1 className="text-gray-900 text-4xl font-extrabold tracking-tight">
+            <h1 className="dark:text-gray-200 text-gray-900 text-4xl font-extrabold tracking-tight">
                 {title}
             </h1>
             {years.map((year) => (
-                <section key={year}>
-                    <h2 className="text-gray-500 uppercase text-sm tracking-wide leading-6">
-                        {year}
-                    </h2>
-                    <ul className="divide-y">
-                        {posts[year].map((post) => (
-                            <li key={post.basename}>
-                                <Post
-                                    basename={post.basename}
-                                    title={post.title}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                </section>
+                <PostList key={year} title={year} posts={posts[year]} />
             ))}
         </main>
     );

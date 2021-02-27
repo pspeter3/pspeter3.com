@@ -16,21 +16,21 @@ export const Post: FC<Pick<BlogPost, "basename" | "title">> = ({
         <article itemScope itemType="http://schema.org/BlogPosting">
             <Link href={url}>
                 <a
-                    className="group py-6 flex space-x-4 focus:outline-none"
+                    className="group flex py-6 focus:outline-none space-x-4"
                     itemProp="url"
                 >
-                    <div className="h-12 w-12 bg-gray-100 group-hover:bg-blue-100 rounded-2xl text-gray-400 group-hover:text-blue-400 flex items-center justify-center flex-shrink-0">
+                    <div className="dark:group-hover:bg-blue-800 dark:hover:text-blue-500 flex flex-shrink-0 items-center justify-center w-12 h-12 group-hover:text-blue-400 text-gray-400 dark:text-gray-500 group-hover:bg-blue-100 bg-gray-100 dark:bg-gray-800 rounded-2xl">
                         <FileText />
                     </div>
                     <div>
                         <h3
-                            className="text-gray-900 font-medium group-hover:text-blue-900 group-focus:underline"
+                            className="dark:group-hover:text-blue-200 group-hover:text-blue-900 dark:text-gray-200 text-gray-900 group-focus:underline font-medium"
                             itemProp="headline"
                         >
                             {title}
                         </h3>
                         <time
-                            className="text-gray-500 block group-hover:text-blue-500"
+                            className="dark:group-hover:text-blue-400 block group-hover:text-blue-500 dark:text-gray-400 text-gray-500"
                             dateTime={iso}
                             itemProp="datePublished"
                         >
