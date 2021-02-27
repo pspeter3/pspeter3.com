@@ -1,6 +1,7 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { Calendar } from "react-feather";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { CodeBlock } from "../../components/CodeBlock";
 import { Header } from "../../components/Header";
 import { Meta } from "../../components/Meta";
@@ -43,7 +44,7 @@ const ArticlePage: NextPage<Props> = (post) => (
         <article className="prose max-w-none prose-blue">
             <header>
                 <time
-                    className="text-lg text-gray-500 flex space-x-2 items-center mb-1"
+                    className="text-xl text-gray-500 flex space-x-2 items-center mb-1"
                     dateTime={toISODate(parseDate(post.basename))}
                     itemProp="datePublished"
                 >
@@ -53,9 +54,9 @@ const ArticlePage: NextPage<Props> = (post) => (
                 <h1 itemProp="headline">{post.title}</h1>
             </header>
             <ReactMarkdown
-                source={post.content}
+                plugins={[remarkGfm]}
                 renderers={{ code: CodeBlock }}
-            ></ReactMarkdown>
+            >{post.content}</ReactMarkdown>
         </article>
     </main>
 );
