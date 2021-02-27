@@ -9,6 +9,7 @@ import { BlogPost, loadBlogPosts } from "../tools/blog";
 import { reverseChronological } from "../tools/utils";
 import { Post } from "../components/Post";
 import { FC } from "react";
+import { PostList } from "../components/PostList";
 
 export interface Props {
     readonly posts: ReadonlyArray<BlogPost>;
@@ -79,18 +80,7 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
                     .
                 </p>
             </section>
-            <section>
-                <h2 className="dark:text-gray-400 text-gray-500 text-sm tracking-wide leading-6 uppercase">
-                    Recent Posts
-                </h2>
-                <ul className="divide-gray-200 dark:divide-gray-700 divide-y">
-                    {posts.map((post) => (
-                        <li key={post.basename}>
-                            <Post basename={post.basename} title={post.title} />
-                        </li>
-                    ))}
-                </ul>
-            </section>
+            <PostList title="Recent Posts" posts={posts} />
             <footer>
                 <Social />
             </footer>
