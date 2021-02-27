@@ -1,15 +1,16 @@
+import fs from "fs";
+import path from "path";
+import util from "util";
 import { SitemapStream, streamToPromise } from "sitemap";
-import * as author from "../../config/author.json";
-import { loadBlogPosts } from "../../tools/blog";
-import { parseDate, toSlug } from "../../tools/utils";
-import { NextApiHandler } from "next";
+import { exec } from "./cli";
+import * as author from "../config/author.json";
+import { loadBlogPosts } from "./blog";
+import { parseDate, toSlug } from "./utils";
 
-const sitemapHandler: NextApiHandler = async (req, res) => {
-    if (req.method !== "GET") {
-        res.status(405);
-        res.setHeader("Allow", ["GET"]);
-        return res.end();
-    }
+const writeFile = util.promisify(fs.writeFile);
+
+const main = async (): Promise<void> => {
+    const filename = "sitemap.xml";
     const sitemap = new SitemapStream({
         hostname: author.site,
     });
@@ -27,9 +28,9 @@ const sitemapHandler: NextApiHandler = async (req, res) => {
     write("/feed.xml");
     sitemap.end();
     const data = await streamToPromise(sitemap);
-    res.status(200);
-    res.setHeader("Content-Type", "application/rss+xml");
-    res.send(data);
+    await writeFile(path.join(process.cwd(), "public", filename), data);
 };
 
-export default sitemapHandler;
+if (require.main === module) {
+    exec(main);
+}
