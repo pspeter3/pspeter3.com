@@ -1,8 +1,14 @@
+const colors = require("tailwindcss/colors");
+
 module.exports = {
     purge: ["./src/**/*.tsx"],
     darkMode: false,
     theme: {
         extend: {
+            colors: {
+                gray: colors.blueGray,
+                blue: colors.lightBlue,
+            },
             typography: {
                 DEFAULT: {
                     css: {
