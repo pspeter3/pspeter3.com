@@ -35,16 +35,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const ArticlePage: NextPage<Props> = (post) => (
     <main
-        className="max-w-2xl mx-auto px-4 pb-6 space-y-6"
+        className="mx-auto pb-6 px-4 max-w-2xl space-y-6"
         itemScope
         itemType="http://schema.org/BlogPosting"
     >
         <Meta title={post.title} description="" />
         <Header />
-        <article className="prose max-w-none prose-blue">
+        <article className="prose prose-blue max-w-none">
             <header>
                 <time
-                    className="text-xl text-gray-500 flex space-x-2 items-center mb-1"
+                    className="flex items-center mb-1 text-gray-500 text-xl space-x-2"
                     dateTime={toISODate(parseDate(post.basename))}
                     itemProp="datePublished"
                 >

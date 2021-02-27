@@ -51,6 +51,7 @@
     "next": "^10.0.7",
     "postcss": "^8.2.6",
     "prettier": "^2.2.1",
+    "prettier-plugin-tailwind": "^2.2.9",
     "rss": "^1.2.2",
     "sitemap": "^6.4.0",
     "tailwindcss": "^2.0.3",

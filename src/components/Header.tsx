@@ -5,15 +5,15 @@ import { Social } from "./Social";
 import * as author from "../config/author.json";
 
 export const Header: FC = () => (
-    <header className="py-3 flex justify-between border-b">
+    <header className="flex justify-between py-3 border-b">
         <Link href="/">
             <a
-                className="focus:outline-none group flex space-x-4"
+                className="group flex focus:outline-none space-x-4"
                 itemProp="author"
                 itemScope
                 itemType="http://schema.org/Person"
             >
-                <div className="h-12 w-12">
+                <div className="w-12 h-12">
                     <Image
                         src="/img/profile.jpg"
                         alt={author.name}
@@ -25,12 +25,12 @@ export const Header: FC = () => (
                 </div>
                 <div className="author__details">
                     <p
-                        className="text-gray-900 block text-lg font-bold group-hover:text-blue-900 group-focus:underline"
+                        className="block group-hover:text-blue-900 text-gray-900 group-focus:underline text-lg font-bold"
                         itemProp="name"
                     >
                         Phips Peter
                     </p>
-                    <p className="text-gray-500  text-sm  group-hover:text-blue-500">
+                    <p className="group-hover:text-blue-500 text-gray-500 text-sm">
                         @pspeter3
                     </p>
                 </div>

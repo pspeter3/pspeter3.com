@@ -25,7 +25,7 @@ const BlogPage: NextPage<Props> = (posts) => {
     const description = "Phips Peter's Blog";
     const years = Object.keys(posts).sort().reverse();
     return (
-        <main className="max-w-2xl mx-auto px-4 pb-6 space-y-6">
+        <main className="mx-auto pb-6 px-4 max-w-2xl space-y-6">
             <Meta title={title} description={description}></Meta>
             <Header />
             <h1 className="text-gray-900 text-4xl font-extrabold tracking-tight">
@@ -33,7 +33,7 @@ const BlogPage: NextPage<Props> = (posts) => {
             </h1>
             {years.map((year) => (
                 <section key={year}>
-                    <h2 className="text-gray-500 uppercase text-sm tracking-wide leading-6">
+                    <h2 className="text-gray-500 text-sm tracking-wide leading-6 uppercase">
                         {year}
                     </h2>
                     <ul className="divide-y">

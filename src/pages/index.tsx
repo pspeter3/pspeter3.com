@@ -44,9 +44,9 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
                 objectPosition="center"
             ></Image>
         </div>
-        <main className="max-w-2xl mx-auto px-4 pb-6 space-y-6">
-            <header className="flex border-b space-x-4 py-4">
-                <div className="relative z-10 -mt-16 rounded-full ring-4 ring-white">
+        <main className="mx-auto pb-6 px-4 max-w-2xl space-y-6">
+            <header className="flex py-4 border-b space-x-4">
+                <div className="relative z-10 -mt-16 rounded-full ring-white ring-4">
                     <Image
                         src="/img/profile.jpg"
                         alt={author.name}
@@ -63,7 +63,7 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
                 </div>
             </header>
             <section className="pb-6">
-                <p className="text-gray-600 text-xl leading-8 ">
+                <p className="text-gray-600 text-xl leading-8">
                     Adoption Pillar Tech Lead at{" "}
                     <IntroLink href="https://asana.com">Asana</IntroLink>.
                     Author of the{" "}
@@ -78,7 +78,7 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
                 </p>
             </section>
             <section>
-                <h2 className="text-gray-500 uppercase text-sm tracking-wide leading-6">
+                <h2 className="text-gray-500 text-sm tracking-wide leading-6 uppercase">
                     Recent Posts
                 </h2>
                 <ul className="divide-y">
