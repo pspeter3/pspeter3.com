@@ -17,8 +17,12 @@ const SocialIcon: FC<{ href: string; label: string }> = ({
     </Link>
 );
 
-export const Social: FC = () => (
-    <nav className="flex justify-center space-x-2">
+export const Social: FC<{ hide?: true }> = ({ hide }) => (
+    <nav
+        className={`justify-center space-x-2 ${
+            hide ? "hidden sm:flex" : "flex"
+        }`}
+    >
         <SocialIcon href="/blog" label="Blog">
             <FileText />
         </SocialIcon>

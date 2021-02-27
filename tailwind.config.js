@@ -7,7 +7,7 @@ module.exports = {
     variants: {
         extend: {
             textDecoration: ["group-focus"],
-        }
+        },
     },
     plugins: [require("@tailwindcss/typography")],
 };

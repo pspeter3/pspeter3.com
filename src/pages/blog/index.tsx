@@ -25,15 +25,27 @@ const BlogPage: NextPage<Props> = (posts) => {
     const description = "Phips Peter's Blog";
     const years = Object.keys(posts).sort().reverse();
     return (
-        <main className="content">
+        <main className="max-w-2xl mx-auto px-4 pb-6 space-y-6">
             <Meta title={title} description={description}></Meta>
-            <Header title={title} />
+            <Header />
+            <h1 className="text-gray-900 text-4xl font-extrabold tracking-tight">
+                {title}
+            </h1>
             {years.map((year) => (
-                <section key={year} className="group">
-                    <h2 className="group__title">{year}</h2>
-                    {posts[year].map((post) => (
-                        <Post key={post.basename} {...post} />
-                    ))}
+                <section key={year}>
+                    <h2 className="text-gray-500 uppercase text-sm tracking-wide leading-6">
+                        {year}
+                    </h2>
+                    <ul className="divide-y">
+                        {posts[year].map((post) => (
+                            <li key={post.basename}>
+                                <Post
+                                    basename={post.basename}
+                                    title={post.title}
+                                />
+                            </li>
+                        ))}
+                    </ul>
                 </section>
             ))}
         </main>

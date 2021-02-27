@@ -34,22 +34,29 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const ArticlePage: NextPage<Props> = (post) => (
     <main
-        className="content"
+        className="max-w-2xl mx-auto px-4 pb-6 space-y-6"
         itemScope
         itemType="http://schema.org/BlogPosting"
     >
         <Meta title={post.title} description="" />
-        <Header title={post.title}></Header>
-        <section className="article__date" itemProp="datePublished">
-            <Calendar className="feather" />
-            {toISODate(parseDate(post.basename))}
-        </section>
-        <section className="article" itemProp="articleBody">
+        <Header />
+        <article className="prose max-w-none prose-blue">
+            <header>
+                <time
+                    className="text-lg text-gray-500 flex space-x-2 items-center mb-1"
+                    dateTime={toISODate(parseDate(post.basename))}
+                    itemProp="datePublished"
+                >
+                    <Calendar size={20} className="text-gray-400" />
+                    <span>{toISODate(parseDate(post.basename))}</span>
+                </time>
+                <h1 itemProp="headline">{post.title}</h1>
+            </header>
             <ReactMarkdown
                 source={post.content}
                 renderers={{ code: CodeBlock }}
             ></ReactMarkdown>
-        </section>
+        </article>
     </main>
 );
 
