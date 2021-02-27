@@ -2,7 +2,21 @@ module.exports = {
     purge: ["./src/**/*.tsx"],
     darkMode: false,
     theme: {
-        extend: {},
+        extend: {
+            typography: {
+                DEFAULT: {
+                    css: {
+                        a: {
+                            "text-decoration": "none",
+                            '&:focus': {
+                                outline: "none",
+                                "text-decoration": "underline",
+                            },
+                        },
+                    },
+                },
+            }
+        },
     },
     variants: {
         extend: {
