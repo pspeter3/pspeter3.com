@@ -6,8 +6,3 @@ node_modules
 
 # Next
 .next
-out
-
-# Generation
-public/feed.xml
-public/sitemap.xml
