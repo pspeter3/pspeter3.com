@@ -1,7 +1,6 @@
 import { NextPage, GetStaticProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-s;
 import { Social } from "../components/Social";
 import { Meta } from "../components/Meta";
 import * as author from "../config/author.json";
