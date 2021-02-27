@@ -28,12 +28,12 @@ const BlogPage: NextPage<Props> = (posts) => {
         <main className="mx-auto pb-6 px-4 max-w-2xl space-y-6">
             <Meta title={title} description={description}></Meta>
             <Header />
-            <h1 className="text-gray-900 text-4xl font-extrabold tracking-tight">
+            <h1 className="dark:text-gray-200 text-gray-900 text-4xl font-extrabold tracking-tight">
                 {title}
             </h1>
             {years.map((year) => (
                 <section key={year}>
-                    <h2 className="text-gray-500 text-sm tracking-wide leading-6 uppercase">
+                    <h2 className="dark:text-gray-400 text-gray-500 text-sm tracking-wide leading-6 uppercase">
                         {year}
                     </h2>
                     <ul className="divide-y">

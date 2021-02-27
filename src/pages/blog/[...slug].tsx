@@ -41,14 +41,17 @@ const ArticlePage: NextPage<Props> = (post) => (
     >
         <Meta title={post.title} description="" />
         <Header />
-        <article className="prose prose-blue max-w-none">
+        <article className="prose prose-blue dark:prose-light max-w-none">
             <header>
                 <time
-                    className="flex items-center mb-1 text-gray-500 text-xl space-x-2"
+                    className="flex items-center mb-1 dark:text-gray-400 text-gray-500 text-xl space-x-2"
                     dateTime={toISODate(parseDate(post.basename))}
                     itemProp="datePublished"
                 >
-                    <Calendar size={20} className="text-gray-400" />
+                    <Calendar
+                        size={20}
+                        className="text-gray-400 dark:text-gray-500"
+                    />
                     <span>{toISODate(parseDate(post.basename))}</span>
                 </time>
                 <h1 itemProp="headline">{post.title}</h1>

@@ -5,7 +5,7 @@ import { Social } from "./Social";
 import * as author from "../config/author.json";
 
 export const Header: FC = () => (
-    <header className="flex justify-between py-3 border-b">
+    <header className="flex justify-between py-3 border-b border-gray-200 dark:border-gray-700">
         <Link href="/">
             <a
                 className="group flex focus:outline-none space-x-4"
@@ -25,12 +25,12 @@ export const Header: FC = () => (
                 </div>
                 <div className="author__details">
                     <p
-                        className="block group-hover:text-blue-900 text-gray-900 group-focus:underline text-lg font-bold"
+                        className="dark:group-hover:text-blue-200 block group-hover:text-blue-900 dark:text-gray-200 text-gray-900 group-focus:underline text-lg font-bold"
                         itemProp="name"
                     >
                         Phips Peter
                     </p>
-                    <p className="group-hover:text-blue-500 text-gray-500 text-sm">
+                    <p className="dark:group-hover:text-blue-400 group-hover:text-blue-500 dark:text-gray-400 text-gray-500 text-sm">
                         @pspeter3
                     </p>
                 </div>

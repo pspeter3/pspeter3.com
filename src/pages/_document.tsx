@@ -24,7 +24,7 @@ export default class CustomDocument extends Document {
                         }}
                     />
                 </Head>
-                <body>
+                <body className="antialiased dark:bg-gray-900 bg-white">
                     <Main />
                     <NextScript />
                 </body>

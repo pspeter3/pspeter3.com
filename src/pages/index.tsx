@@ -26,7 +26,7 @@ const IntroLink: FC<{ href: string; children: string }> = ({
     children,
 }) => (
     <Link href={href}>
-        <a className="text-blue-600 focus:underline focus:outline-none">
+        <a className="dark:text-blue-300 text-blue-600 focus:underline focus:outline-none">
             {children}
         </a>
     </Link>
@@ -45,8 +45,8 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
             ></Image>
         </div>
         <main className="mx-auto pb-6 px-4 max-w-2xl space-y-6">
-            <header className="flex py-4 border-b space-x-4">
-                <div className="relative z-10 -mt-16 rounded-full ring-white ring-4">
+            <header className="flex py-4 border-b border-gray-200 dark:border-gray-700 space-x-4">
+                <div className="relative z-10 flex-shrink-0 -mt-16 rounded-full dark:ring-gray-900 ring-white ring-4">
                     <Image
                         src="/img/profile.jpg"
                         alt={author.name}
@@ -56,14 +56,16 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
                     ></Image>
                 </div>
                 <div className="space-y-1">
-                    <h1 className="text-gray-900 text-2xl font-bold tracking-tight">
+                    <h1 className="dark:text-gray-200 text-gray-900 text-2xl font-bold tracking-tight">
                         {author.name}
                     </h1>
-                    <p className="text-gray-500 text-lg">{author.twitter}</p>
+                    <p className="dark:text-gray-400 text-gray-500 text-lg">
+                        {author.twitter}
+                    </p>
                 </div>
             </header>
             <section className="pb-6">
-                <p className="text-gray-600 text-xl leading-8">
+                <p className="dark:text-gray-300 text-gray-600 text-xl leading-8">
                     Adoption Pillar Tech Lead at{" "}
                     <IntroLink href="https://asana.com">Asana</IntroLink>.
                     Author of the{" "}
@@ -78,10 +80,10 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
                 </p>
             </section>
             <section>
-                <h2 className="text-gray-500 text-sm tracking-wide leading-6 uppercase">
+                <h2 className="dark:text-gray-400 text-gray-500 text-sm tracking-wide leading-6 uppercase">
                     Recent Posts
                 </h2>
-                <ul className="divide-y">
+                <ul className="divide-gray-200 dark:divide-gray-700 divide-y">
                     {posts.map((post) => (
                         <li key={post.basename}>
                             <Post basename={post.basename} title={post.title} />
