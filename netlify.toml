@@ -1,4 +1,5 @@
 [build]
+    command = "npm run netlify"
     publish = "out"
 [build.processing.css]
     bundle = false
