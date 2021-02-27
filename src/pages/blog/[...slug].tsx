@@ -56,7 +56,9 @@ const ArticlePage: NextPage<Props> = (post) => (
             <ReactMarkdown
                 plugins={[remarkGfm]}
                 renderers={{ code: CodeBlock }}
-            >{post.content}</ReactMarkdown>
+            >
+                {post.content}
+            </ReactMarkdown>
         </article>
     </main>
 );

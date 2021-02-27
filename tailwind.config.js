@@ -8,14 +8,14 @@ module.exports = {
                     css: {
                         a: {
                             "text-decoration": "none",
-                            '&:focus': {
+                            "&:focus": {
                                 outline: "none",
                                 "text-decoration": "underline",
                             },
                         },
                     },
                 },
-            }
+            },
         },
     },
     variants: {
