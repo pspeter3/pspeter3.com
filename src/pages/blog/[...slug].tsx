@@ -1,6 +1,7 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import { Calendar } from "react-feather";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { CodeBlock } from "../../components/CodeBlock";
 import { Header } from "../../components/Header";
 import { Meta } from "../../components/Meta";
@@ -34,22 +35,31 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const ArticlePage: NextPage<Props> = (post) => (
     <main
-        className="content"
+        className="max-w-2xl mx-auto px-4 pb-6 space-y-6"
         itemScope
         itemType="http://schema.org/BlogPosting"
     >
         <Meta title={post.title} description="" />
-        <Header title={post.title}></Header>
-        <section className="article__date" itemProp="datePublished">
-            <Calendar className="feather" />
-            {toISODate(parseDate(post.basename))}
-        </section>
-        <section className="article" itemProp="articleBody">
+        <Header />
+        <article className="prose max-w-none prose-blue">
+            <header>
+                <time
+                    className="text-xl text-gray-500 flex space-x-2 items-center mb-1"
+                    dateTime={toISODate(parseDate(post.basename))}
+                    itemProp="datePublished"
+                >
+                    <Calendar size={20} className="text-gray-400" />
+                    <span>{toISODate(parseDate(post.basename))}</span>
+                </time>
+                <h1 itemProp="headline">{post.title}</h1>
+            </header>
             <ReactMarkdown
-                source={post.content}
+                plugins={[remarkGfm]}
                 renderers={{ code: CodeBlock }}
-            ></ReactMarkdown>
-        </section>
+            >
+                {post.content}
+            </ReactMarkdown>
+        </article>
     </main>
 );
 

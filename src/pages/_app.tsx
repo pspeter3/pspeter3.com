@@ -1,6 +1,6 @@
 import { ComponentType, FC, useEffect } from "react";
 import Router from "next/router";
-import "../styles/style.css";
+import "tailwindcss/tailwind.css";
 import { google } from "../config/analytics.json";
 import { NextWebVitalsMetric } from "next/dist/next-server/lib/utils";
 
