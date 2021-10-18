@@ -45,7 +45,7 @@
     "@types/rss": "0.0.29",
     "autoprefixer": "^10.3.7",
     "eslint": "^7.20.0",
-    "eslint-plugin-jest": "^24.1.5",
+    "eslint-plugin-jest": "^25.2.2",
     "fast-glob": "^3.2.5",
     "gray-matter": "^4.0.3",
     "jest": "^27.3.0",
