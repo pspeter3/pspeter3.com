@@ -10,20 +10,17 @@ import { parseDate, toISODate, toSlug } from "../../tools/utils";
 
 export type Props = BlogPost;
 
-export const getStaticProps: GetStaticProps<
-    Props,
-    { slug: string[] }
-> = async ({ params }) => {
-    const blog = await loadBlogPosts();
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const { slug } = params!;
-    const basename = slug.join("-");
-    const props = blog.find((post) => post.basename === basename);
-    if (!props) {
-        throw new Error(`Could not find ${basename}`);
-    }
-    return { props };
-};
+export const getStaticProps: GetStaticProps<Props, { slug: string[] }> =
+    async ({ params }) => {
+        const blog = await loadBlogPosts();
+        const { slug } = params!;
+        const basename = slug.join("-");
+        const props = blog.find((post) => post.basename === basename);
+        if (!props) {
+            throw new Error(`Could not find ${basename}`);
+        }
+        return { props };
+    };
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const blog = await loadBlogPosts();
@@ -58,7 +55,7 @@ const ArticlePage: NextPage<Props> = (post) => (
             </header>
             <ReactMarkdown
                 plugins={[remarkGfm]}
-                renderers={{ code: CodeBlock }}
+                components={{ code: CodeBlock }}
             >
                 {post.content}
             </ReactMarkdown>

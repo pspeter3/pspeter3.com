@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Social } from "./Social";
-import * as author from "../config/author.json";
+import author from "../config/author.json";
 
 export const Header: FC = () => (
     <header className="flex justify-between py-3 border-b border-gray-200 dark:border-gray-700">

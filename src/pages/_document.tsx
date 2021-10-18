@@ -1,7 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { google } from "../config/analytics.json";
+import analytics from "../config/analytics.json";
 
 export default class CustomDocument extends Document {
+    // eslint-disable-next-line no-undef
     render(): JSX.Element {
         return (
             <Html lang="en">
@@ -9,7 +10,7 @@ export default class CustomDocument extends Document {
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         async
-                        src={`https://www.googletagmanager.com/gtag/js?id=${google}`}
+                        src={`https://www.googletagmanager.com/gtag/js?id=${analytics.google}`}
                     />
                     <script
                         dangerouslySetInnerHTML={{
@@ -17,7 +18,7 @@ export default class CustomDocument extends Document {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${google}', {
+            gtag('config', '${analytics.google}', {
               page_path: window.location.pathname,
             });
           `,
