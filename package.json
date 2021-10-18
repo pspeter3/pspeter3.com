@@ -33,7 +33,7 @@
     "remark-gfm": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/node": "^7.13.0",
+    "@babel/node": "^7.15.8",
     "@tailwindcss/typography": "^0.4.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.2",
