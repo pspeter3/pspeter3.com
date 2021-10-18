@@ -9,7 +9,7 @@ const SocialIcon: FC<{ href: string; label: string }> = ({
 }) => (
     <Link href={href}>
         <a
-            className="dark:hover:text-blue-500 dark:focus:ring-blue-500 flex items-center justify-center w-12 h-12 hover:text-blue-400 text-gray-400 dark:text-gray-500 rounded-2xl focus:outline-none focus:ring-blue-400 focus:ring"
+            className="dark:hover:text-blue-500 dark:focus:ring-blue-500 flex items-center justify-center w-12 h-12 hover:text-blue-400 text-gray-400 dark:text-gray-500 rounded-2xl focus:outline-none focus:ring focus:ring-blue-400"
             aria-label={label}
         >
             {children}

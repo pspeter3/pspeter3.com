@@ -45,7 +45,7 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
         </div>
         <main className="mx-auto pb-6 px-4 max-w-2xl space-y-6">
             <header className="flex py-4 border-b border-gray-200 dark:border-gray-700 space-x-4">
-                <div className="relative z-10 flex-shrink-0 -mt-16 rounded-full dark:ring-gray-900 ring-white ring-4">
+                <div className="relative z-10 flex-shrink-0 -mt-16 rounded-full ring-4 dark:ring-gray-900 ring-white">
                     <Image
                         src="/img/profile.jpg"
                         alt={author.name}
