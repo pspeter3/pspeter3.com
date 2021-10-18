@@ -8,7 +8,7 @@ export const CodeBlock: FC<{ inline?: boolean; className?: string }> = (
     const { inline, className, children } = props;
     const match = /language-(\w+)/.exec(className ?? "");
     if (inline || match === null) {
-        return <code {...props} />;
+        return <code className={className}>{children}</code>;
     }
     const language = match[1];
     return (

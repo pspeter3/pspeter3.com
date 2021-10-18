@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import { FileText } from "react-feather";
-import * as author from "../config/author.json";
+import author from "../config/author.json";
 import { parseDate, toISODate, toSlug } from "../tools/utils";
 import { BlogPost } from "../tools/blog";
 

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Head from "next/head";
-import * as author from "../config/author.json";
+import author from "../config/author.json";
 
 export const Meta: FC<{ title: string; description: string }> = ({
     title,

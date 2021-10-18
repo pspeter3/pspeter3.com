@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Social } from "../components/Social";
 import { Meta } from "../components/Meta";
-import * as author from "../config/author.json";
+import author from "../config/author.json";
 import { BlogPost, loadBlogPosts } from "../tools/blog";
 import { reverseChronological } from "../tools/utils";
 import { FC } from "react";

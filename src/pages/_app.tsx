@@ -1,12 +1,12 @@
 import { ComponentType, FC, useEffect } from "react";
 import Router from "next/router";
 import "tailwindcss/tailwind.css";
-import { google } from "../config/analytics.json";
-import { NextWebVitalsMetric } from "next/dist/next-server/lib/utils";
+import analytics from "../config/analytics.json";
+import { NextWebVitalsMetric } from "next/dist/shared/lib/utils";
 
+// eslint-disable-next-line no-undef
 declare let gtag: UniversalAnalytics.ga;
 
-// eslint-disable-next-line  @typescript-eslint/ban-types
 export interface Props<T = {}> {
     Component: ComponentType<T>;
     pageProps: T;
@@ -31,7 +31,7 @@ export function reportWebVitals({
 const App: FC<Props> = ({ Component, pageProps }) => {
     useEffect(() => {
         const handleRouteChange = (url: string) => {
-            gtag("config", google, {
+            gtag("config", analytics.google, {
                 page_path: url,
             });
         };

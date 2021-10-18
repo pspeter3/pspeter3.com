@@ -13,7 +13,6 @@ export type Props = BlogPost;
 export const getStaticProps: GetStaticProps<Props, { slug: string[] }> =
     async ({ params }) => {
         const blog = await loadBlogPosts();
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const { slug } = params!;
         const basename = slug.join("-");
         const props = blog.find((post) => post.basename === basename);
