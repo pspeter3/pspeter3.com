@@ -41,7 +41,7 @@ const ArticlePage: NextPage<Props> = (post) => (
         <article className="prose prose-blue dark:prose-light max-w-none">
             <header>
                 <time
-                    className="flex items-center mb-1 dark:text-gray-400 text-gray-500 text-xl space-x-2"
+                    className="flex items-center mb-2 dark:text-gray-400 text-gray-500 text-xl space-x-2"
                     dateTime={toISODate(parseDate(post.basename))}
                     itemProp="datePublished"
                 >
