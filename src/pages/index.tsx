@@ -25,7 +25,7 @@ const IntroLink: FC<{ href: string; children: string }> = ({
     children,
 }) => (
     <Link href={href}>
-        <a className="dark:text-blue-300 text-blue-600 focus:underline focus:outline-none">
+        <a className="dark:text-sky-300 text-sky-600 focus:underline focus:outline-none">
             {children}
         </a>
     </Link>

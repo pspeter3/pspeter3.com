@@ -25,12 +25,12 @@ export const Header: FC = () => (
                 </div>
                 <div className="author__details">
                     <p
-                        className="dark:group-hover:text-blue-200 block group-hover:text-blue-900 dark:text-gray-200 text-gray-900 group-focus:underline text-lg font-bold"
+                        className="dark:group-hover:text-sky-200 block group-hover:text-sky-900 dark:text-gray-200 text-gray-900 group-focus:underline text-lg font-bold"
                         itemProp="name"
                     >
                         Phips Peter
                     </p>
-                    <p className="dark:group-hover:text-blue-400 group-hover:text-blue-500 dark:text-gray-400 text-gray-500 text-sm">
+                    <p className="dark:group-hover:text-sky-400 group-hover:text-sky-500 dark:text-gray-400 text-gray-500 text-sm">
                         @pspeter3
                     </p>
                 </div>
