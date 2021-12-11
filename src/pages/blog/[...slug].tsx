@@ -1,5 +1,4 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from "next";
-import { Calendar } from "react-feather";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { CodeBlock } from "../../components/CodeBlock";
@@ -38,18 +37,14 @@ const ArticlePage: NextPage<Props> = (post) => (
     >
         <Meta title={post.title} description="" />
         <Header />
-        <article className="prose prose-blue dark:prose-light max-w-none">
+        <article className="prose prose-sky dark:prose-invert max-w-none">
             <header>
                 <time
-                    className="flex items-center mb-2 dark:text-gray-400 text-gray-500 text-xl space-x-2"
+                    className="dark:text-gray-400 text-gray-500 font-semibold"
                     dateTime={toISODate(parseDate(post.basename))}
                     itemProp="datePublished"
                 >
-                    <Calendar
-                        size={20}
-                        className="text-gray-400 dark:text-gray-500"
-                    />
-                    <span>{toISODate(parseDate(post.basename))}</span>
+                    {toISODate(parseDate(post.basename))}
                 </time>
                 <h1 itemProp="headline">{post.title}</h1>
             </header>

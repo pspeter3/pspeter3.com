@@ -19,18 +19,18 @@ export const Post: FC<Pick<BlogPost, "basename" | "title">> = ({
                     className="group flex py-6 focus:outline-none space-x-4"
                     itemProp="url"
                 >
-                    <div className="dark:group-hover:bg-blue-800 dark:hover:text-blue-500 flex flex-shrink-0 items-center justify-center w-12 h-12 group-hover:text-blue-400 text-gray-400 dark:text-gray-500 group-hover:bg-blue-100 bg-gray-100 dark:bg-gray-800 rounded-2xl">
+                    <div className="dark:group-hover:bg-sky-800 dark:hover:text-sky-500 flex flex-shrink-0 items-center justify-center w-12 h-12 group-hover:text-sky-400 text-gray-400 dark:text-gray-500 group-hover:bg-sky-100 bg-gray-100 dark:bg-gray-800 rounded-2xl">
                         <FileText />
                     </div>
                     <div>
                         <h3
-                            className="dark:group-hover:text-blue-200 group-hover:text-blue-900 dark:text-gray-200 text-gray-900 group-focus:underline font-medium"
+                            className="dark:group-hover:text-sky-200 group-hover:text-sky-900 dark:text-gray-200 text-gray-900 group-focus:underline font-medium"
                             itemProp="headline"
                         >
                             {title}
                         </h3>
                         <time
-                            className="dark:group-hover:text-blue-400 block group-hover:text-blue-500 dark:text-gray-400 text-gray-500"
+                            className="dark:group-hover:text-sky-400 block group-hover:text-sky-500 dark:text-gray-400 text-gray-500"
                             dateTime={iso}
                             itemProp="datePublished"
                         >
