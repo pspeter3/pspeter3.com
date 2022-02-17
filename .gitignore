@@ -1,14 +1,3 @@
-# Code Coverage
-coverage
-
 # Dependencies
 node_modules
 
-# Next
-.next
-
-# Generate
-public/*.xml
-
-# Cache
-tsconfig.tsbuildinfo
