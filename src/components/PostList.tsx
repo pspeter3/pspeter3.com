@@ -7,10 +7,10 @@ export const PostList: FC<{
     posts: ReadonlyArray<Pick<BlogPost, "basename" | "title">>;
 }> = ({ title, posts }) => (
     <section>
-        <h2 className="dark:text-gray-400 text-gray-500 text-sm tracking-wide leading-6 uppercase">
+        <h2 className="text-sm uppercase leading-6 tracking-wide text-gray-500 dark:text-gray-400">
             {title}
         </h2>
-        <ul className="divide-gray-200 dark:divide-gray-700 divide-y">
+        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
             {posts.map((post) => (
                 <li key={post.basename}>
                     <Post basename={post.basename} title={post.title} />

@@ -16,21 +16,21 @@ export const Post: FC<Pick<BlogPost, "basename" | "title">> = ({
         <article itemScope itemType="http://schema.org/BlogPosting">
             <Link href={url}>
                 <a
-                    className="group flex py-6 focus:outline-none space-x-4"
+                    className="group flex space-x-4 py-6 focus:outline-none"
                     itemProp="url"
                 >
-                    <div className="dark:group-hover:bg-sky-800 dark:hover:text-sky-500 flex flex-shrink-0 items-center justify-center w-12 h-12 group-hover:text-sky-400 text-gray-400 dark:text-gray-500 group-hover:bg-sky-100 bg-gray-100 dark:bg-gray-800 rounded-2xl">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-gray-400 group-hover:bg-sky-100 group-hover:text-sky-400 dark:bg-gray-800 dark:text-gray-500 dark:hover:text-sky-500 dark:group-hover:bg-sky-800">
                         <FileText />
                     </div>
                     <div>
                         <h3
-                            className="dark:group-hover:text-sky-200 group-hover:text-sky-900 dark:text-gray-200 text-gray-900 group-focus:underline font-medium"
+                            className="font-medium text-gray-900 group-hover:text-sky-900 group-focus:underline dark:text-gray-200 dark:group-hover:text-sky-200"
                             itemProp="headline"
                         >
                             {title}
                         </h3>
                         <time
-                            className="dark:group-hover:text-sky-400 block group-hover:text-sky-500 dark:text-gray-400 text-gray-500"
+                            className="block text-gray-500 group-hover:text-sky-500 dark:text-gray-400 dark:group-hover:text-sky-400"
                             dateTime={iso}
                             itemProp="datePublished"
                         >
