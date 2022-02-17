@@ -25,10 +25,10 @@ const BlogPage: NextPage<Props> = (posts) => {
     const description = "Phips Peter's Blog";
     const years = Object.keys(posts).sort().reverse();
     return (
-        <main className="mx-auto pb-6 px-4 max-w-2xl space-y-6">
+        <main className="mx-auto max-w-2xl space-y-6 px-4 pb-6">
             <Meta title={title} description={description}></Meta>
             <Header />
-            <h1 className="dark:text-gray-200 text-gray-900 text-4xl font-extrabold tracking-tight">
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
                 {title}
             </h1>
             {years.map((year) => (

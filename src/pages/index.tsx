@@ -25,7 +25,7 @@ const IntroLink: FC<{ href: string; children: string }> = ({
     children,
 }) => (
     <Link href={href}>
-        <a className="dark:text-sky-300 text-sky-600 focus:underline focus:outline-none">
+        <a className="text-sky-600 focus:underline focus:outline-none dark:text-sky-300">
             {children}
         </a>
     </Link>
@@ -43,9 +43,9 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
                 objectPosition="center"
             ></Image>
         </div>
-        <main className="mx-auto pb-6 px-4 max-w-2xl space-y-6">
-            <header className="flex py-4 border-b border-gray-200 dark:border-gray-700 space-x-4">
-                <div className="relative z-10 flex-shrink-0 -mt-16 rounded-full ring-4 dark:ring-gray-900 ring-white">
+        <main className="mx-auto max-w-2xl space-y-6 px-4 pb-6">
+            <header className="flex space-x-4 border-b border-gray-200 py-4 dark:border-gray-700">
+                <div className="relative z-10 -mt-16 flex-shrink-0 rounded-full ring-4 ring-white dark:ring-gray-900">
                     <Image
                         src="/img/profile.jpg"
                         alt={author.name}
@@ -55,16 +55,16 @@ const IndexPage: NextPage<Props> = ({ posts }) => (
                     ></Image>
                 </div>
                 <div className="space-y-1">
-                    <h1 className="dark:text-gray-200 text-gray-900 text-2xl font-bold tracking-tight">
+                    <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
                         {author.name}
                     </h1>
-                    <p className="dark:text-gray-400 text-gray-500 text-lg">
+                    <p className="text-lg text-gray-500 dark:text-gray-400">
                         {author.twitter}
                     </p>
                 </div>
             </header>
             <section className="pb-6">
-                <p className="dark:text-gray-300 text-gray-600 text-xl leading-8">
+                <p className="text-xl leading-8 text-gray-600 dark:text-gray-300">
                     Adoption Pillar Tech Lead at{" "}
                     <IntroLink href="https://asana.com">Asana</IntroLink>.
                     Author of the{" "}
