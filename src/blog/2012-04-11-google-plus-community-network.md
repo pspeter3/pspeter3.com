@@ -1,7 +1,7 @@
 ---
 title: "Google+: Community Network?"
 tags:
-    - google+
+  - google+
 ---
 
 With the new Google+ Redesign today, I've been thinking about what the role of

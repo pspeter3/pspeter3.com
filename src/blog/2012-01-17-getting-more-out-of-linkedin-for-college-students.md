@@ -1,7 +1,7 @@
 ---
 title: "Getting More Out of LinkedIn for College Students"
 tags:
-    - linkedin
+  - linkedin
 ---
 
 Recently I've been asked by a lot of my friends at school what value can they
