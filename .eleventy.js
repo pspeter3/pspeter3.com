@@ -32,6 +32,14 @@ module.exports = function configure(config) {
   );
   config.addShortcode("limit", (array, limit) => array.slice(0, limit));
   config.addShortcode("reverse", (array) => Array.from(array).reverse());
+  config.addShortcode("utc", (date) =>
+    date.toLocaleDateString("default", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      timeZone: "UTC",
+    })
+  );
   // Template Options
   config.setLiquidOptions({ timezoneOffset: 0 });
   // Configuration
