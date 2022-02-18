@@ -3,12 +3,13 @@
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "build": "eleventy",
-    "fix": "run-s fix:format",
-    "start": "next start",
-    "test": "run-p test:*",
-    "fix:format": "prettier --write 'src/**/*' '*.{js,md}'",
-    "test:format": "prettier --check 'src/**/*' '*.{js,md}'"
+    "build": "run-p build:*",
+    "fix": "prettier --write 'src/**/*' '*.{js,md}'",
+    "start": "run-p watch:*",
+    "build:site": "eleventy",
+    "build:styles": "tailwindcss --output _site/assets/tailwind.css",
+    "watch:site": "eleventy --incremental --serve",
+    "watch:styles": "npm run build:styles -- --watch"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,9 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
-    "@prettier/plugin-pug": "^1.19.2",
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.3.7",
+    "feather-icons": "^4.28.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.9",
     "prettier": "^2.4.1",
@@ -26,5 +27,18 @@
     "rss": "^1.2.2",
     "sitemap": "^7.0.0",
     "tailwindcss": "^3.0.1"
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.hbs",
+        "options": {
+          "parser": "html"
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0"
   }
 }
