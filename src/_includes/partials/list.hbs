@@ -1,10 +1,18 @@
 <section>
   <h2
-    className="text-sm uppercase leading-6 tracking-wide text-gray-500 dark:text-gray-400"
+    class="
+      text-sm
+      font-semibold
+      uppercase
+      leading-6
+      tracking-wide
+      text-gray-500
+      dark:text-gray-400
+    "
   >
     {{title}}
   </h2>
-  <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-    {{#each items}}{{>item .}}{{/each}}
+  <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+    {{#each items}}{{>partials/item .}}{{/each}}
   </ul>
 </section>

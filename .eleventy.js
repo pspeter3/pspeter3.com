@@ -1,4 +1,5 @@
 const feather = require("feather-icons");
+const path = require("path");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function configure(config) {
@@ -6,6 +7,8 @@ module.exports = function configure(config) {
   config.addCollection("posts", (collection) =>
     collection.getFilteredByGlob("*/blog/**/*.md")
   );
+  // Passthrough Copies
+  config.addPassthroughCopy(path.join("src", "img"));
   // Plugins
   config.addPlugin(syntaxHighlight);
   // Shortcodes
