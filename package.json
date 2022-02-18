@@ -7,9 +7,9 @@
     "fix": "prettier --write 'src/**/*' '*.{js,md}'",
     "start": "run-p watch:*",
     "build:site": "eleventy",
-    "build:styles": "tailwindcss --output _site/assets/tailwind.css",
+    "build:styles": "tailwindcss --output _site/assets/tailwind.css --minify",
     "watch:site": "eleventy --incremental --serve",
-    "watch:styles": "npm run build:styles -- --watch"
+    "watch:styles": "tailwindcss --output _site/assets/tailwind.css --watch"
   },
   "repository": {
     "type": "git",
