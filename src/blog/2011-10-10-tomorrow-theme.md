@@ -1,9 +1,9 @@
 ---
 title: "Tomorrow Theme"
 tags:
-    - gedit
-    - ubuntu
-    - elementary
+  - gedit
+  - ubuntu
+  - elementary
 ---
 
 Hi, everyone, so I'm a big fan of Chris Kempson's Tomorrow Theme which

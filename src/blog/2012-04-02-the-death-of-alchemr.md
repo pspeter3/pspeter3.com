@@ -1,11 +1,11 @@
 ---
 title: "The Death of Alchemr"
 tags:
-    - padrino
-    - alchemr
-    - ruby
-    - node
-    - express
+  - padrino
+  - alchemr
+  - ruby
+  - node
+  - express
 ---
 
 For the last few weeks, I had been working on a website called Alchemr with my

@@ -1,0 +1,52 @@
+<header
+  class="
+    flex
+    justify-between
+    border-b border-gray-200
+    py-3
+    dark:border-gray-700
+  "
+>
+  <a
+    href="/"
+    class="group flex space-x-4 focus:outline-none"
+    itemprop="author"
+    itemscope
+    itemtype="http://schema.org/Person"
+  >
+    <div class="h-12 w-12">
+      <img
+        src="/img/profile.jpg"
+        alt="{{author.name}}"
+        itemprop="image"
+        class="rounded-full"
+      />
+    </div>
+    <div>
+      <p
+        class="
+          block
+          text-lg
+          font-bold
+          text-gray-900
+          group-hover:text-sky-900
+          group-focus:underline
+          dark:text-gray-200 dark:group-hover:text-sky-200
+        "
+        itemprop="name"
+      >
+        {{author.name}}
+      </p>
+      <p
+        class="
+          text-sm text-gray-500
+          group-hover:text-sky-500
+          dark:text-gray-400 dark:group-hover:text-sky-400
+        "
+      >
+        {{author.twitter}}
+      </p>
+    </div>
+  </a>
+  {{>partials/nav hide=true}}
+</header>

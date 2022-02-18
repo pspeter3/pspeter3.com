@@ -1,0 +1,83 @@
+---
+layout: base
+---
+
+<img
+  class="relative h-72 w-full object-cover object-center"
+  src="/img/cover.jpg"
+  alt="New Zealand Beach"
+/>
+<main class="mx-auto max-w-2xl space-y-6 px-4 pb-6">
+  <header
+    class="flex space-x-4 border-b border-gray-200 py-4 dark:border-gray-700"
+  >
+    <img
+      class="
+        relative
+        z-10
+        -mt-16
+        h-32
+        w-32
+        flex-shrink-0
+        rounded-full
+        ring-4 ring-white
+        dark:ring-gray-900
+      "
+      src="/img/profile.jpg"
+      alt="{{author.name}}"
+    />
+    <div class="space-y-1">
+      <h1
+        class="
+          text-2xl
+          font-bold
+          tracking-tight
+          text-gray-900
+          dark:text-gray-200
+        "
+      >
+        {{author.name}}
+      </h1>
+      <p class="text-lg text-gray-500 dark:text-gray-400">{{author.twitter}}</p>
+    </div>
+  </header>
+  <section class="pb-6">
+    <p class="text-xl leading-8 text-gray-600 dark:text-gray-300">
+      Adoption & Enterprise Pillar Tech Lead at
+      <a
+        href="https://asana.com"
+        class="
+          text-sky-600
+          focus:underline focus:outline-none
+          dark:text-sky-300
+        "
+        >Asana</a
+      >. Author of the
+      <a
+        href="https://www.npmjs.com/package/@types/react"
+        class="
+          text-sky-600
+          focus:underline focus:outline-none
+          dark:text-sky-300
+        "
+      >
+        React Typescript
+      </a>
+      definitions. Organizer of the
+      <a
+        href="https://www.meetup.com/typescript-react/"
+        class="
+          text-sky-600
+          focus:underline focus:outline-none
+          dark:text-sky-300
+        "
+      >
+        TypeScript React Meetup
+      </a>
+      .
+    </p>
+  </section>
+  {{>partials/list title="Recent Posts" items=(limit (reverse collections.posts)
+  3)}}
+  <footer>{{>partials/nav}}</footer>
+</main>

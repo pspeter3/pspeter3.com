@@ -3,54 +3,42 @@
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "build": "npm run generate && next build",
-    "dev": "next dev",
-    "fix": "run-s fix:format",
-    "generate": "run-p generate:*",
-    "start": "next start",
-    "test": "run-p test:*",
-    "fix:format": "prettier --write 'src/**/*' '*.{js,md}'",
-    "generate:feed": "npm run ts-exec -- src/tools/rss.ts",
-    "generate:sitemap": "npm run ts-exec -- src/tools/sitemap.ts",
-    "test:format": "prettier --check 'src/**/*' '*.{js,md}'",
-    "test:types": "tsc --pretty",
-    "ts-exec": "ts-node --transpile-only --compiler-options='{\"module\": \"commonjs\"}'"
+    "build": "run-p build:*",
+    "fix": "prettier --write 'src/**/*' '*.{js,md}'",
+    "start": "run-p watch:*",
+    "build:site": "eleventy",
+    "build:styles": "tailwindcss --output _site/assets/tailwind.css --minify",
+    "watch:site": "eleventy --incremental --serve",
+    "watch:styles": "tailwindcss --output _site/assets/tailwind.css --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pspeter3/pspeter3.com.git"
   },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-feather": "^2.0.9",
-    "react-markdown": "^7.1.0",
-    "react-syntax-highlighter": "^15.4.4",
-    "remark-gfm": "^3.0.0"
-  },
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
     "@tailwindcss/typography": "^0.5.0",
-    "@types/google.analytics": "0.0.42",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "@types/react-syntax-highlighter": "^13.5.2",
-    "@types/rss": "0.0.29",
     "autoprefixer": "^10.3.7",
-    "fast-glob": "^3.2.5",
-    "gray-matter": "^4.0.3",
-    "next": "^12.0.9",
+    "feather-icons": "^4.28.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.9",
     "prettier": "^2.4.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
     "rss": "^1.2.2",
     "sitemap": "^7.0.0",
-    "tailwindcss": "^3.0.1",
-    "ts-node": "^10.3.0",
-    "typescript": "^4.4.4"
+    "tailwindcss": "^3.0.1"
   },
   "prettier": {
-    "tabWidth": 4,
-    "trailingComma": "all"
+    "overrides": [
+      {
+        "files": "*.hbs",
+        "options": {
+          "parser": "html"
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0"
   }
 }

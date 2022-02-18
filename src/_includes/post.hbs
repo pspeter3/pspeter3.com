@@ -1,0 +1,32 @@
+---
+layout: base
+---
+
+<main
+  class="mx-auto max-w-2xl space-y-6 px-4 pb-6"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  {{>partials/head}}
+  <article class="prose prose-sky max-w-none dark:prose-invert">
+    <header>
+      <time
+        class="
+          text-sm
+          font-semibold
+          uppercase
+          leading-6
+          tracking-wide
+          text-gray-500
+          dark:text-gray-400
+        "
+        datetime="{{iso page.date}}"
+        itemprop="datePublished"
+      >
+        {{utc page.date}}
+      </time>
+      <h1 itemprop="headline">{{title}}</h1>
+    </header>
+    {{{content}}}
+  </article>
+</main>
