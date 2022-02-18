@@ -1,4 +1,5 @@
 const feather = require("feather-icons");
+const htmlnano = require("htmlnano");
 const path = require("path");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
@@ -43,6 +44,14 @@ module.exports = function configure(config) {
       timeZone: "UTC",
     })
   );
+  // Transforms
+  config.addTransform("htmlnano", async (content, outputPath) => {
+    if (!outputPath.endsWith("html")) {
+      return content;
+    }
+    const result = await htmlnano.process(content);
+    return result.html;
+  });
   // Template Options
   config.setLiquidOptions({ timezoneOffset: 0 });
   // Configuration
