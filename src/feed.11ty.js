@@ -9,7 +9,7 @@ exports.render = function render(ctx) {
         site_url: "https://pspeter3.com",
         feed_url: "https://pspeter3.com/feed.xml",
     });
-    ctx.collections.posts.forEach((post) => {
+    for (const post of ctx.collections.posts) {
         feed.item({
             title: post.data.title,
             description: post.data.description,
@@ -18,6 +18,6 @@ exports.render = function render(ctx) {
             author: post.data.author.name,
             categories: post.tags,
         });
-    });
+    }
     return feed.xml();
 };
