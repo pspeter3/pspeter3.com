@@ -3,13 +3,9 @@
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "build": "run-p build:*",
-    "fix": "prettier --write 'src/**/*' '*.{js,md}'",
-    "start": "run-p watch:*",
-    "build:site": "eleventy",
-    "build:styles": "tailwindcss --output _site/assets/tailwind.css --minify",
-    "watch:site": "eleventy --incremental --serve",
-    "watch:styles": "tailwindcss --output _site/assets/tailwind.css --watch"
+    "build": "wireit",
+    "fix": "wireit",
+    "start": "wireit"
   },
   "repository": {
     "type": "git",
@@ -23,7 +19,6 @@
     "cssnano": "^5.1.14",
     "feather-icons": "^4.29.0",
     "htmlnano": "^2.0.3",
-    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
@@ -31,7 +26,8 @@
     "sitemap": "^7.0.0",
     "svgo": "^2.8.0",
     "tailwindcss": "^3.2.4",
-    "terser": "^5.16.1"
+    "terser": "^5.16.1",
+    "wireit": "^0.9.5"
   },
   "prettier": {
     "overrides": [
@@ -42,5 +38,51 @@
         }
       }
     ]
+  },
+  "wireit": {
+    "build": {
+      "dependencies": [
+        "build:site",
+        "build:styles"
+      ]
+    },
+    "build:site": {
+      "command": "eleventy",
+      "files": [
+        ".eleventy.js",
+        "src/**/*.hbs",
+        "src/**/*.js",
+        "src/**/*.json",
+        "src/img/**"
+      ],
+      "output": [
+        "_site/**/*.{html,xml}",
+        "_site/img/*"
+      ]
+    },
+    "build:styles": {
+      "command": "tailwindcss --output _site/assets/tailwind.css --minify",
+      "files": [
+        "tailwind.config.js",
+        "src/**/*.hbs"
+      ]
+    },
+    "fix": {
+      "command": "prettier --cache --write 'src/**/*' '*.{js,md}'"
+    },
+    "start": {
+      "dependencies": [
+        "watch:site",
+        "watch:styles"
+      ]
+    },
+    "watch:site": {
+      "command": "eleventy --incremental --serve",
+      "service": true
+    },
+    "watch:styles": {
+      "command": "tailwindcss --output _site/assets/tailwind.css --watch",
+      "service": true
+    }
   }
 }
