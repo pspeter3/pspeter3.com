@@ -1,3 +1,6 @@
+# Build
+.wireit/
+
 # Dependencies
 node_modules/
 
