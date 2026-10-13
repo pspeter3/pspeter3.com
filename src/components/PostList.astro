@@ -1,0 +1,22 @@
+---
+import PostListItem from "./PostListItem.astro";
+import type { Post } from "../lib/posts";
+interface Props {
+  title: string | number;
+  items: Post[];
+}
+const { title, items } = Astro.props;
+---
+
+<section>
+  <h2 class="text-sm font-semibold uppercase leading-6 tracking-wide text-gray-500 dark:text-gray-400">
+    {title}
+  </h2>
+  <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+    {items.map((post) => (
+      <li>
+        <PostListItem post={post} />
+      </li>
+    ))}
+  </ul>
+</section>

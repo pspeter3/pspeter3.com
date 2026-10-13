@@ -1,0 +1,20 @@
+---
+import { render } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import PostLayout from "../../../../../layouts/PostLayout.astro";
+import { getPosts, type Post } from "../../../../../lib/posts";
+export const getStaticPaths = (async () =>
+  (await getPosts()).map((post) => ({
+    params: post.params,
+    props: { post },
+  }))) satisfies GetStaticPaths;
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const { Content } = await render(post.entry);
+---
+
+<PostLayout post={post}>
+  <Content />
+</PostLayout>

@@ -1,0 +1,22 @@
+---
+import SocialLink from "./SocialLink.astro";
+interface Props {
+  hide?: boolean;
+}
+const { hide = false } = Astro.props;
+---
+
+<nav class:list={["justify-center gap-2", hide ? "hidden sm:flex" : "flex"]}>
+  <SocialLink href="/blog/" label="Blog" icon="file-text" />
+  <SocialLink href="https://github.com/pspeter3" label="Github" icon="github" />
+  <SocialLink
+    href="https://twitter.com/pspeter3"
+    label="Twitter"
+    icon="twitter"
+  />
+  <SocialLink
+    href="https://linkedin.com/in/pspeter3"
+    label="LinkedIn"
+    icon="linkedin"
+  />
+</nav>
