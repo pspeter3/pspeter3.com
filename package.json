@@ -3,86 +3,59 @@
   "description": "Personal website",
   "private": true,
   "scripts": {
-    "build": "wireit",
-    "fix": "wireit",
-    "start": "wireit"
+    "start": "astro dev",
+    "build": "astro build",
+    "format": "prettier . --write --cache --cache-strategy content",
+    "format:check": "prettier . --check --cache --cache-strategy content",
+    "lint": "eslint . --cache --cache-strategy content --max-warnings 0",
+    "lint:fix": "npm run lint -- --fix",
+    "typecheck": "astro check",
+    "check": "npm run format:check && npm run lint && npm run typecheck",
+    "fix": "npm run lint:fix && npm run format"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pspeter3/pspeter3.com.git"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
-    "@tailwindcss/typography": "^0.5.8",
-    "autoprefixer": "^10.4.13",
-    "cssnano": "^5.1.14",
-    "feather-icons": "^4.29.0",
-    "htmlnano": "^2.0.3",
-    "postcss": "^8.4.20",
-    "prettier": "^2.8.1",
-    "prettier-plugin-tailwindcss": "^0.2.1",
-    "rss": "^1.2.2",
-    "sitemap": "^7.0.0",
-    "svgo": "^2.8.0",
-    "tailwindcss": "^3.2.4",
-    "terser": "^5.16.1",
-    "wireit": "^0.9.5"
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/markdown-satteri": "^0.4.3",
+    "@astrojs/rss": "^4.0.19",
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/typography": "^0.5.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.8",
+    "eslint": "^10.12.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^3.2.1",
+    "jiti": "^2.7.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.2"
   },
   "prettier": {
+    "plugins": [
+      "prettier-plugin-astro",
+      "prettier-plugin-tailwindcss"
+    ],
+    "tailwindStylesheet": "./src/styles/global.css",
     "overrides": [
       {
-        "files": "*.hbs",
+        "files": "*.astro",
         "options": {
-          "parser": "html"
+          "parser": "astro"
         }
       }
     ]
   },
-  "wireit": {
-    "build": {
-      "dependencies": [
-        "build:site",
-        "build:styles"
-      ]
-    },
-    "build:site": {
-      "command": "eleventy",
-      "files": [
-        ".eleventy.js",
-        "src/**/*.hbs",
-        "src/**/*.js",
-        "src/**/*.json",
-        "src/img/**"
-      ],
-      "output": [
-        "_site/**/*.{html,xml}",
-        "_site/img/*"
-      ]
-    },
-    "build:styles": {
-      "command": "tailwindcss --output _site/assets/tailwind.css --minify",
-      "files": [
-        "tailwind.config.js",
-        "src/**/*.hbs"
-      ]
-    },
-    "fix": {
-      "command": "prettier --cache --write 'src/**/*' '*.{js,md}'"
-    },
-    "start": {
-      "dependencies": [
-        "watch:site",
-        "watch:styles"
-      ]
-    },
-    "watch:site": {
-      "command": "eleventy --incremental --serve",
-      "service": true
-    },
-    "watch:styles": {
-      "command": "tailwindcss --output _site/assets/tailwind.css --watch",
-      "service": true
-    }
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }

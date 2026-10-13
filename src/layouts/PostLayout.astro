@@ -1,0 +1,35 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Header from "../components/Header.astro";
+import { formatPostDate, type Post } from "../lib/posts";
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+---
+
+<BaseLayout
+  title={post.entry.data.title}
+  description={post.entry.data.description}
+>
+  <main
+    class="mx-auto max-w-2xl space-y-6 px-4 pb-6"
+    itemscope
+    itemtype="http://schema.org/BlogPosting"
+  >
+    <Header />
+    <article class="prose prose-sky max-w-none dark:prose-invert">
+      <header>
+        <time
+          class="text-sm font-semibold uppercase leading-6 tracking-wide text-gray-500 dark:text-gray-400"
+          datetime={post.iso}
+          itemprop="datePublished"
+        >
+          {formatPostDate(post.date)}
+        </time>
+        <h1 itemprop="headline">{post.entry.data.title}</h1>
+      </header>
+      <slot />
+    </article>
+  </main>
+</BaseLayout>

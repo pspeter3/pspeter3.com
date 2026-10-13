@@ -1,8 +1,4 @@
-# Build
-.wireit/
-
-# Dependencies
 node_modules/
-
-# Output
-_site/
+dist/
+.astro/
+.eslintcache

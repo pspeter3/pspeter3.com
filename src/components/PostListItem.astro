@@ -1,0 +1,44 @@
+---
+import author from "../data/author.json";
+import Icon from "./Icon.astro";
+import type { Post } from "../lib/posts";
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+---
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <a
+    href={post.path}
+    class="group flex gap-4 py-6 focus:outline-hidden"
+    itemprop="url"
+  >
+    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gray-100 text-gray-400 group-hover:bg-sky-100 group-hover:text-sky-400 dark:bg-gray-800 dark:text-gray-500 dark:hover:text-sky-500 dark:group-hover:bg-sky-800">
+      <Icon name="file-text" />
+    </div>
+    <div>
+      <h3
+        class="font-medium text-gray-900 group-hover:text-sky-900 group-focus:underline dark:text-gray-200 dark:group-hover:text-sky-200"
+        itemprop="headline"
+      >
+        {post.entry.data.title}
+      </h3>
+      <time
+        class="block text-gray-500 group-hover:text-sky-500 dark:text-gray-400 dark:group-hover:text-sky-400"
+        datetime={post.iso}
+        itemprop="datePublished"
+      >
+        {post.iso}
+      </time>
+    </div>
+    <div
+      class="hidden"
+      itemprop="author"
+      itemscope
+      itemtype="http://schema.org/Person"
+    >
+      <meta itemprop="name" content={author.name} />
+    </div>
+  </a>
+</article>
