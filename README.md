@@ -40,7 +40,11 @@ Prettier's cache does not track plugin versions or all external stylesheet input
 
 ## Deployment
 
-Configure Vercel with the **Astro** framework preset, **Node 24.x**, build command **`npm run check && npm run build`**, and output directory **`dist`**. No adapter is required for static output. `vercel.json` retains the `nosniff` and `deny` security headers. External project settings have not been changed or verified, and this migration does not publish a deployment.
+Configure Cloudflare Pages with the **Astro** framework preset, build command **`npm run check && npm run build`**, and build output directory **`dist`**. The repository's `.node-version` selects **Node 24.21.0**, matching local verification. Remove or align any existing `NODE_VERSION` environment override in both production and preview settings.
+
+Astro copies `public/_headers` into `dist/_headers`, where Cloudflare Pages applies the `X-Content-Type-Options: nosniff` and `X-Frame-Options: DENY` security headers to all routes. No adapter or Pages Functions are required for this static site. External project settings have not been changed or verified, and this migration does not publish a deployment.
+
+See Cloudflare's [Astro deployment guide](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/), [build runtime configuration](https://developers.cloudflare.com/pages/configuration/build-image/), and [static response headers](https://developers.cloudflare.com/pages/configuration/headers/).
 
 ## Migration notes
 
