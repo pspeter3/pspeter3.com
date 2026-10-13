@@ -4,7 +4,7 @@ Personal website, built as static HTML with Astro and Tailwind CSS. Astro's Sät
 
 ## Development
 
-Use Node **24 LTS** (verified with **24.21.0**, npm **12.0.2**). Install from the committed lockfile:
+Use Node **24 or 26**. The repository defaults to **24.21.0** via `.node-version`; Node **26.5.0** is also verified with npm **12.0.2**. Install from the committed lockfile:
 
 ```sh
 npm ci
@@ -23,9 +23,9 @@ npm run check && npm run build
 
 Add ordinary Markdown in `src/content/blog/`, named `YYYY-MM-DD-slug.md`. Dates must be valid calendar dates; slugs use lowercase letters, numbers, and hyphens. Frontmatter requires `title`; `description` (string) and `tags` (string array) are optional. Keep images in `public/img/` and reference them at `/img/...`.
 
-The filename supplies the UTC publication date and the dated `/blog/YYYY/MM/DD/slug/` URL. `src/lib/posts.ts` shares this mapping across pages, RSS, and sitemap, rejects duplicate URLs, and sorts by publication date then filename. The homepage shows the newest three posts. The archive shows posts in reverse chronological order within descending years; RSS uses the same reverse chronological order.
+The filename supplies the UTC publication date and the dated `/blog/YYYY/MM/DD/slug/` URL. `src/lib/post-filename.ts` validates filenames and supplies date and URL metadata. `src/lib/posts.ts` shares the mapped posts across pages, RSS, and sitemap, rejects duplicate URLs, and sorts newest-first by publication date then filename. The homepage shows the newest three posts. The archive shows posts in reverse chronological order within descending years; RSS uses the same reverse chronological order.
 
-Six existing URLs have an explicit legacy date exception in `src/lib/posts.ts`. Eleventy's Liquid date filter generated the preceding day for these winter posts while displayed dates and feed dates remained UTC. These public URLs stay unchanged; new posts use their actual filename date. Do not remove these exceptions without planning redirects.
+Six existing URLs have an explicit legacy date exception in `src/lib/post-filename.ts`. Eleventy's Liquid date filter generated the preceding day for these winter posts while displayed dates and feed dates remained UTC. These public URLs stay unchanged; new posts use their actual filename date. Do not remove these exceptions without planning redirects.
 
 ## Caches
 

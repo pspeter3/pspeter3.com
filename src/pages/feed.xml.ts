@@ -8,7 +8,7 @@ export const GET: APIRoute = async ({ site }) =>
     title: "pspeter3",
     description: author.name,
     site: site!,
-    items: (await getPosts()).reverse().map((post) => ({
+    items: (await getPosts()).map((post) => ({
       title: post.entry.data.title,
       description: post.entry.data.description,
       link: post.path,
