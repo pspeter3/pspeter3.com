@@ -17,7 +17,7 @@ npm run start
 npm run check && npm run build
 ```
 
-`check` runs cached Prettier checking, cached ESLint checking, and Astro's TypeScript checker. `npm run fix` runs ESLint fixes followed by formatting. Individual commands are `format`, `format:check`, `lint`, `lint:fix`, and `typecheck`.
+`npm test` runs cached Prettier checking, cached ESLint checking, and Astro's TypeScript checker. `check` is an alias for `npm test`. Individual commands are `format`, `format:check`, `lint`, `lint:fix`, and `typecheck`.
 
 ## Content
 
