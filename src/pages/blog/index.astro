@@ -1,16 +1,17 @@
 ---
+import PageContainer from "../../layouts/PageContainer.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import PostList from "../../components/PostList.astro";
 import { getPosts } from "../../lib/posts";
-const posts = (await getPosts()).reverse();
+const posts = await getPosts();
 const years = [
   ...new Set(posts.map((post) => post.date.getUTCFullYear())),
 ].sort((a, b) => b - a);
 ---
 
 <BaseLayout title="Blog">
-  <main class="mx-auto max-w-2xl space-y-6 px-4 pb-6">
+  <PageContainer>
     <Header />
     <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200">
       Blog
@@ -21,5 +22,5 @@ const years = [
         items={posts.filter((post) => post.date.getUTCFullYear() === year)}
       />
     ))}
-  </main>
+  </PageContainer>
 </BaseLayout>

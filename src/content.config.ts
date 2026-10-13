@@ -1,7 +1,7 @@
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { glob } from "astro/loaders";
-import { parsePostFilename } from "./lib/posts";
+import { parsePostFilename } from "./lib/post-filename";
 
 const blog = defineCollection({
   loader: glob({
